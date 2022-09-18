@@ -30,8 +30,8 @@ linkedin_username: yoadg
 github_username:  yoadg
 
 # Build settings
-#theme: minima
-remote_theme: pages-themes/cayman@v0.2.0
+theme: minima
+#remote_theme: pages-themes/cayman@v0.2.0
 plugins:
   - jekyll-feed
   - jekyll-remote-theme 
