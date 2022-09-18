@@ -18,10 +18,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Software Systems Architecture 
+title: Software Systems Designer Guide 
 email: yoad.gidron@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  This site provides an overview of the most common technologies that are used tody to build modern software systems. 
+  This site provides an overview of the most common technologies that are being used tody to design and build modern 
+  software systems. 
 baseurl: / # the subpath of your site, e.g. /blog
 url: https://yoadg.github.io # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
