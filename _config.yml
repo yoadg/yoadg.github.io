@@ -18,23 +18,45 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Software Systems Designer Guide 
+title: Stairway to the Cloud
 email: yoad.gidron@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  This site provides an overview of the most common technologies that are being used tody to design and build modern 
-  software systems. 
+  An overview of the most common technologies that are being used tody to design and build modern software systems in the cloud. 
 baseurl: / # the subpath of your site, e.g. /blog
 url: https://yoadg.github.io # the base hostname & protocol for your site, e.g. http://example.com
+author:
+  name: Yoad Gidron
+copyright: ©2022 Yoad Gidron
 #twitter_username: jekyllrb
 linkedin_username: yoadg
 github_username:  yoadg
+lang: en-US
+search: true
 
 # Build settings
-theme: minima
-#remote_theme: pages-themes/cayman@v0.2.0
+#theme: minima
+remote_theme: "mmistakes/jekyll-theme-basically-basic@1.4.5"
 plugins:
   - jekyll-feed
   - jekyll-remote-theme 
+  - jekyll-paginate
+
+feed:
+  path: atom.xml
+
+# Pagination - https://jekyllrb.com/docs/pagination/
+paginate: 10
+paginate_path: /page:num/
+
+# Front Matter Defaults
+defaults:
+  # _posts
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: post
+      read_time: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.

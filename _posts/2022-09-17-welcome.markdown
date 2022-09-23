@@ -1,8 +1,0 @@
----
-layout: post
-title:  "Welcome to my new website"
-date:   2022-09-17 19:28:49 +0300
-categories: update
----
-Hello and welcome to my new website, titled: "Software Systems Designer Guide”. 
-My name is Yoad Gidron and I have been a CTO and Chief Architect for more than 20 years. I created this site in order to try and capture the various technologies that me and my colleagues are using for designing and building complex software systems, which are deployed in private and public clouds. The basic idea is to put some order in this ever growing realm and hopefully help others to find the most suitable technology for their needs. Currently there is not much content here rather than an intro, but I will cover various topics over the time. I hope that you’ll find it useful. Your feedback and comments are welcome. 
