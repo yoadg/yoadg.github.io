@@ -26,6 +26,7 @@ baseurl: / # the subpath of your site, e.g. /blog
 url: https://yoadg.github.io # the base hostname & protocol for your site, e.g. http://example.com
 author:
   name: Yoad Gidron
+  linkedin: yoadg
 copyright: ©2022 Yoad Gidron
 #twitter_username: jekyllrb
 linkedin_username: yoadg
