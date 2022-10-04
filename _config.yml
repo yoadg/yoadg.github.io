@@ -31,6 +31,7 @@ copyright: ©2022 Yoad Gidron
 #twitter_username: jekyllrb
 linkedin_username: yoadg
 github_username:  yoadg
+logo: /assets/images/icon.svg
 lang: en-US
 search: true
 
@@ -48,6 +49,12 @@ feed:
 # Pagination - https://jekyllrb.com/docs/pagination/
 paginate: 10
 paginate_path: /page:num/
+
+# Collections
+collections:
+  wiki:
+    output: true
+    permalink: /:collection/:path/
 
 # Front Matter Defaults
 defaults:
