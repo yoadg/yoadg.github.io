@@ -5,5 +5,6 @@ permalink: /wiki/
 ---
 # The Cloud Wiki
 ## Compute Infrastructure
-- [Basic Computer Architecture (Hardware)](/hardware)
+- [Basic Computer Architecture](/hardware)
 - [Operating System](/os)
+- [Virtualization](/virtualization)
