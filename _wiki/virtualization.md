@@ -1,15 +1,15 @@
 ---
 layout: page
 title: Virtualization
-permalink: /virtualization/
+permalink: /wiki/virtualization/
 categories: 
   - compute
 tags:
   - 
 ---
-Hardware Virtualization is technology that enables the creation of multiple simulated environments from a single, physical hardware system. With virtualization, a single [computer system](/hardware) (machine) can run numerous [operating systems](/os) simultaneously, each with potentially different applications and libraries inside. It is based on the creation of *virtual machines* that act like real computers with operating systems. Software executed on these virtual machines is separated from the underlying hardware resources. 
+Hardware Virtualization is technology that enables the creation of multiple simulated environments from a single, physical hardware system. With virtualization, a single [computer system](/wiki/hardware) (machine) can run numerous [operating systems](/wiki/os) simultaneously, each with potentially different applications and libraries inside. It is based on the creation of *virtual machines* that act like real computers with operating systems. Software executed on these virtual machines is separated from the underlying hardware resources. 
 
-In hardware virtualization, the host machine is the machine that is used by the virtualization and the guest machine is the virtual machine. The terms host and guest are used to distinguish the software that runs on the physical machine from the software that runs on the virtual machine. These guests treat computing resources like [CPU](/hardware#central-processing-unit), [memory](/hardware#main-memory), and [storage](/hardware#storage), as a pool of resources that can easily be relocated. 
+In hardware virtualization, the host machine is the machine that is used by the virtualization and the guest machine is the virtual machine. The terms host and guest are used to distinguish the software that runs on the physical machine from the software that runs on the virtual machine. These guests treat computing resources like [CPU](/wiki/hardware#central-processing-unit), [memory](/wiki/hardware#main-memory), and [storage](/wiki/hardware#storage), as a pool of resources that can easily be relocated. 
 
 The software or firmware that creates a virtual machine on the host hardware is called a *hypervisor* or virtual machine monitor. Virtual Machines rely on the hypervisor’s ability to separate the machine’s resources from the hardware and distribute them appropriately.
 

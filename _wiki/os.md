@@ -1,19 +1,19 @@
 ---
 layout: page
 title: Operating System
-permalink: /os/
+permalink: /wiki/os/
 categories: 
   - compute
 tags:
-  - 
+  - operating system
 ---
 
-Every modern, general-purpose computer system needs an Operating System (OS) to run application programs. An operating system is system software that manages [computer hardware](/hardware), governs access to software resources and acts as an interface between computer hardware components and the user. It provides common services and functionalities that allow computer programs to run on the underlying machine. The main purpose of an operating system is to provide an environment in which a user can execute programs conveniently and efficiently. It manages the allocation of resources ([CPU](/hardware#central-processing-unit), [memory](/hardware#main-memory), [storage](/hardware#storage), etc.), ensuring that each process and application receives enough resources to function properly. It controls the policy of the system, by enforcing rules that regulate the behavior of different processes and security mechanisms to prevent misuse of the computer.
+Every modern, general-purpose computer system needs an Operating System (OS) to run application programs. An operating system is system software that manages [computer hardware](/wiki/hardware), governs access to software resources and acts as an interface between computer hardware components and the user. It provides common services and functionalities that allow computer programs to run on the underlying machine. The main purpose of an operating system is to provide an environment in which a user can execute programs conveniently and efficiently. It manages the allocation of resources ([CPU](/wiki/hardware#central-processing-unit), [memory](/wiki/hardware#main-memory), [storage](/wiki/hardware#storage), etc.), ensuring that each process and application receives enough resources to function properly. It controls the policy of the system, by enforcing rules that regulate the behavior of different processes and security mechanisms to prevent misuse of the computer.
 
 There are different types of operating systems, but in general most of them manage the following resources and services:
 - **Processes** – The OS manages processes that are executed by the processor (CPU). The OS handles the creation, scheduling, blocking, suspension, resuming and termination of processes. It decides the order in which processes have access to the processor, and how much processing time each process has. It monitors running processes and keeps track of their statuses. It also provides mechanisms for synchronization and communication between processes.
 - **Memory** – The OS manages the allocation and deallocation of main memory space that programs need for their execution. It keeps track of allocated and free memory space, and handles the protection of memory of one process from another.
-- **Storage** – The OS manages a file system on secondary storage devices (disks). A file system is organized in a hierarchical structure of directories for efficient and easy navigation and usage. The OS handles the creation, retrieval, naming, deletion, sharing, and protection of files.
+- **Storage** – The OS manages a [file system](/wiki/storage#file-system) on secondary storage devices (disks). A file system is organized in a hierarchical structure of directories for efficient and easy navigation and usage. The OS handles the creation, retrieval, naming, deletion, sharing, and protection of files.
 - **I/O Devices** – The OS manages all connected devices and their configuration. Its main function is to ensure that all the connected devices are correctly allocated and functioning. It designates a program responsible for every device known as the Input/Output controller. It decides which process gets access to a certain device and for how long. 
 - **Jobs** – The OS determines the jobs/tasks that need to be processed first (based on their priorities) and ensures that these tasks are completed. It also keeps track of the time and resources used by various tasks and users.
 - **Security** – The OS distinguishes between requests which should be allowed to be processed, and others which should not be processed. The authorization is based on user identity. 
