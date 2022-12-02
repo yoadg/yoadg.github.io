@@ -9,7 +9,7 @@ tags:
   - virtual machines
   - containers 
 ---
-[AWS EC2](https://aws.amazon.com/ec2/) was the first public cloud service that I used about ten years ago. It is a service that allows users to rent virtual machines on which they can run their own applications. EC2 that was launched in 2006 is the most popular AWS service today, and is probably the one which is most associated with public cloud. 
+[AWS EC2](https://aws.amazon.com/ec2/) was the first public [cloud services](/wiki/cloud) that I used about ten years ago. It is a service that allows users to rent [virtual machines](/wiki/virtualization#virtual-machines) on which they can run their own applications. EC2 that was launched in 2006 is the most popular AWS service today, and is probably the one which is most associated with public cloud. 
 
 [Virtualization](/wiki/virtualization) is the fundamental technology that powers cloud computing. Without virtualization, cloud computing wouldn’t be a viable option. Virtualization allows the cloud provider to share physical machines between different customers and utilize them in an optimal manner. It means that instead of renting a full machine, each customer can use only a virtual part of the machine, which makes it financially beneficial for both the provider and the consumer. Furthermore, virtualization provides full isolation between computing environments of different customers, which makes this multi-tenant model secure. 
 

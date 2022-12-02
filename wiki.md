@@ -4,6 +4,8 @@ layout: basic
 permalink: /wiki/
 ---
 # The Cloud Wiki
+- [Cloud Computing](/wiki/cloud)
+
 ## Compute Infrastructure
 - [Basic Computer Architecture](/wiki/hardware)
 - [Operating System](/wiki/os)
