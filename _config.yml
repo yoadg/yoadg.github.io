@@ -34,6 +34,8 @@ github_username:  yoadg
 logo: /assets/images/icon.svg
 lang: en-US
 search: true
+search_full_content: true
+google_analytics: G-BHNC15FGZF
 
 # Build settings
 #theme: minima
