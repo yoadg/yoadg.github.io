@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Virtualization
+title: Virtual Computing
 last_modified_at: 2022-10-28 22:30:00 +0300
 categories: 
   - posts
