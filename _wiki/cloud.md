@@ -50,7 +50,7 @@ The public cloud provider owns, manages, and assumes all responsibility for the 
 The three most popular public cloud services are:
 1. [Amazon Web Services](https://aws.amazon.com/) (AWS)
 2. [Microsoft Azure](https://azure.microsoft.com/en-us/)
-3. [Google Cloud Platform](https://cloud.google.com/) (GCP)
+3. [Google Cloud](https://cloud.google.com/) (formerly known as GCP)
 
 ### Private Cloud
 Private cloud is a cloud environment in which all cloud infrastructure and computing resources are dedicated to, and accessible by, one customer only. Private cloud combines many of the benefits of cloud computing, including elasticity, scalability, and ease of service delivery, with the access control, security, and resource customization of on-premises infrastructure.

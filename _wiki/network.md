@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Computer Networking
+title: Computer Networks
 permalink: /wiki/network/
 categories: 
   - network
@@ -71,7 +71,7 @@ The Transmission Control Protocol (TCP) is the most common transport protocol of
 ### Geographic Scale
 Networks can be characterized by physical extent or geographic scale, such as:
 - **Personal Area Network (PAN)** – a computer network used for communication among computers and different information technological devices close to one person. The reach of a PAN typically extends to 10 meters. A wired PAN is usually constructed with USB and FireWire connections while technologies such as Bluetooth (BT) and infrared (IR) communication typically form a wireless PAN.
-- **Local Area Network (LAN)** – a network that connects computers and devices in a limited geographical area such as a home, school, office building, or closely positioned group of buildings. Wired LANs are most commonly based on Ethernet technology. Wireless LANs are based on the IEEE 802.11 standard, which is commonly called WiFI. A LAN can be connected to a wide area network (WAN) using a router. 
+- **Local Area Network (LAN)** – a network that connects computers and devices in a limited geographical area such as a home, school, office building, or closely positioned group of buildings. Wired LANs are most commonly based on Ethernet technology. Wireless LANs are based on the IEEE 802.11 standard, known as WiFi. A LAN can be connected to a wide area network (WAN) using a router. 
 - **Backbone Network** – part of a computer network infrastructure that provides a path for the exchange of information between different LANs or subnetworks. A backbone can tie together diverse networks within the same building, across different buildings, or over a wide area. The Internet backbone is a massive, global system of fiber-optic cable and optical networking that carry the bulk of data between WANs, metro, regional, national and transoceanic networks.
 - **Wide Area Network (WAN)** – a computer network that covers a large geographic area such as a city, country, or spans even intercontinental distances. A WAN uses a communications channel that combines many types of media such as telephone lines, cables, and airwaves. WAN technologies generally function at the lower three layers of the [OSI model](#osi-model): the physical layer, the data link layer, and the network layer.
 

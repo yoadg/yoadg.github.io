@@ -13,6 +13,7 @@ permalink: /wiki/
 
 ## Data Stores
 - [Data Storage](/wiki/storage)
+- [Databases](/wiki/databases)
 
-## Computer Networks
-- [Computer Networking](/wiki/network)
+## Networking
+- [Computer Networks](/wiki/network)
