@@ -2,6 +2,7 @@
 layout: page
 title: Operating System
 permalink: /wiki/os/
+date: 2022-11-05
 categories: 
   - compute
 tags:

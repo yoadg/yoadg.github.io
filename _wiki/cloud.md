@@ -2,6 +2,7 @@
 layout: page
 title: Cloud Computing
 permalink: /wiki/cloud/
+date: 2023-01-01
 categories: 
   - cloud
 ---
@@ -13,7 +14,7 @@ The main characteristics of cloud computing are:
 - **Resource pooling** – Computing resources in a cloud infrastructure platform are dynamically divided and allocated on demand. Since a cloud host’s physical machines are dynamically provisioned and shared between multiple clients (“tenants”), cloud hardware is thoroughly optimized for maximum usage.
 - **On-demand self service** – Cloud computing providers offer APIs that users access to requisition new resources or scale existing resources whenever needed. It enables the client to constantly monitor the server uptime, abilities, and allotted network storage.
 - **Rapid elasticity and scalability** – Cloud infrastructures can grow and shrink dynamically, allowing users to request that their computational resources auto-scale with traffic demands. It enables the cost-effective running of workloads that require a vast number of servers but only for a short period. 
-- **Resilience and availability** – A cloud’s resilience is measured by how fast its servers, databases, and network system restarts and recover from any harm or damage. Availability is another major characteristic of cloud computing. Since cloud services can be accessed remotely, there is no geographic restriction or limitation when it comes to utilizing cloud resources.
+- **Resilience and availability** – A cloud’s resilience is measured by how fast its [servers](/wiki/hardware), [databases](/wiki/databases), and [network](/wiki/network) system restarts and recover from any harm or damage. Availability is another major characteristic of cloud computing. Since cloud services can be accessed remotely, there is no geographic restriction or limitation when it comes to utilizing cloud resources.
 - **Measured service** – Cloud infrastructure providers give detailed usage metrics that are used to communicate usage costs. Cloud service providers generally take a utility style pay-as-you-go billing model that is measured and delivered, so customers are charged for the exact amount of computing resources used.
 
 ## Cloud Service Models
@@ -31,7 +32,7 @@ IaaS provides on-demand access to cloud-hosted physical and virtual servers, sto
 Typically IaaS customers can choose between virtual machines (VMs) hosted on shared physical hardware (the CSP manages virtualization) or bare metal servers on dedicated (unshared) physical hardware. IaaS is a self-service environment that allows customers to provision, configure and operate the servers and infrastructure resources via a graphical dashboard (console), or programmatically through APIs. 
 
 ### PaaS
-PaaS provides on-demand access to a complete, ready-to-use, cloud-hosted platform for developing, running, maintaining and managing applications. It provides the underlying infrastructure (compute, network, storage), as well as programming-language runtime execution environment, middleware (e.g., identity, messaging, etc.) and database management systems. PaaS delivers development tools and a framework that allow developers to create customized applications. PaaS customers can simply upload an artifact of their application code that is automatically deployed to the platform, which automatically handles scaling and monitoring of the infrastructure to grow or shrink resources with observed traffic loads.
+PaaS provides on-demand access to a complete, ready-to-use, cloud-hosted platform for developing, running, maintaining and managing applications. It provides the underlying infrastructure (compute, network, storage), as well as programming-language runtime execution environment, middleware (e.g., identity, messaging, etc.) and [database management systems](/wiki/databases). PaaS delivers development tools and a framework that allow developers to create customized applications. PaaS customers can simply upload an artifact of their application code that is automatically deployed to the platform, which automatically handles scaling and monitoring of the infrastructure to grow or shrink resources with observed traffic loads.
 
 Today, PaaS is often built around [containers](/wiki/virtualization#containers) that are deployed on top of a container orchestration platform such as Kubernetes. The orchestration platform and other tools in the container ecosystem enable a CSP to deliver a highly productive PaaS that addresses many of the infrastructure- and operations-related tasks and issues around cloud-native application development.
 

@@ -2,10 +2,13 @@
 layout: page
 title: Databases
 permalink: /wiki/databases/
+date: 2023-01-09
 categories: 
   - data stores
 tags:
   - database
+  - sql
+  - nosql
 ---
 A database (DB) is a structured collection of data, which is stored and accessed electronically in a computer system. The data is typically organized in a specific way, such as by columns and rows in a table, and can be searched, sorted, and retrieved efficiently. A database is usually controlled by a *database management system* (DBMS). The DBMS manages dedicated files on the computer's [disk](/wiki/storage#storage-devices) and presents a logical interface for users and applications. Together, the data and the DBMS, along with the applications that are associated with them, are referred to as a *database system*, often shortened to just a *database*.
 
@@ -87,14 +90,14 @@ Relational databases organize data using tables (or "relations") of columns (or 
 
 Relational DBs are typically provisioned to a single server and scale vertically by adding more resources to the machine. Many RDBMS support built-in replication features where copies of the primary database can be made to other secondary server instances. Write operations are made to the primary instance and replicated to each of the secondaries. Upon a failure, the primary instance can fail over to a secondary to provide high availability. Secondaries can also be used to distribute read operations. While writes operations always go against the primary replica, read operations can be routed to any of the secondaries to reduce system load. Data can also be horizontally partitioned across multiple nodes, such as with sharding.
 
-Many of the most widely used databases are relational, such as [Oracle](https://www.oracle.com/database/), [MySQL](https://www.mysql.com/), [SQL Server](https://www.microsoft.com/en-gb/sql-server) and [PostgreSQL](https://www.postgresql.org/). 
+Many of the most widely used databases are relational, such as [Oracle](https://www.oracle.com/database/), [MySQL](https://www.mysql.com/), [SQL Server](https://www.microsoft.com/en-gb/sql-server), [PostgreSQL](https://www.postgresql.org/), [MariaDB](https://mariadb.org/) and [IBM Db2](https://www.ibm.com/products/db2). 
 
 ## Key-Value Databases
 Key-value databases, or key-value stores, are one of the simplest database types. Key-value stores work by storing arbitrary data accessible through unique keys. In most basic implementations, the database does not evaluate the data it is storing and allows limited ways of interacting with it. Pure key-value stores do not support operations beyond simple CRUD. Some implementations provide more complex actions on top of this foundation according to the basic data type stored under each key. For instance, they might be able to increment numeric values or perform slices or other operations on lists. Since many key-value stores load their entire datasets into memory, these operations can be completed very efficiently.
 
 Key-value stores don't prescribe any schema for the data they store, and as such, are often used to store many different types of data at the same time. The user is responsible for defining any naming scheme for the keys that will help identify the values and are responsible for ensuring the value is of the appropriate type and format. Key-value storage is most useful as a lightweight solution for storing simple values that can be operated on externally after retrieval.
 
-Many of the key-value stores are implemented as in-memory cache solutions, such as [Redis](https://redis.io/), [Memcached](https://memcached.org/) and [etcd](https://etcd.io/). There are also persistent key-value databases such as [Amazon DynamoDB](https://aws.amazon.com/dynamodb/).
+Many of the key-value stores are implemented as in-memory cache solutions, such as [Redis](https://redis.io/) and [Memcached](https://memcached.org/). There are also persistent key-value databases such as [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) and [etcd](https://etcd.io/).
 
 ## Document Databases
 Document databases, also known as document-oriented databases or document stores, share the basic access and retrieval semantics of key-value stores. A document store is a key-value store that restricts values to semi-structured formats such as XML, JSON or BSON. These values are referred to as documents. Each document is effectively an object containing attribute metadata along with a typed value such as string, date, binary or an array. This provides a way to index and query data based on the attributes in the document. It is not only possible to fetch an entire document by its ID, but also to retrieve only parts of a document, e.g. the age of a customer, and to execute queries like aggregation, query-by-example or even full-text search. So, unlike with key-value stores, the content stored in document databases can be queried and analyzed.
@@ -108,7 +111,7 @@ Graph databases are a type of NoSQL database that takes a different approach to 
 
 Graph databases can be implemented as a native graph; which means they store data in the graph model described above, while non-native graphs store data in relational or other NoSQL databases and use graph processing engines for data access. Native Graphs implement index-free adjacency for data access.
 
-Examples of Graph DBs: [Neo4j](https://neo4j.com/), [ArangoDB](https://www.arangodb.com/), [Amazon Neptune](https://aws.amazon.com/neptune/)
+Examples of Graph DBs: [Neo4j](https://neo4j.com/), [JanusGraph](https://janusgraph.org/), [Amazon Neptune](https://aws.amazon.com/neptune/)
 
 ## Column-Family Databases
 Column-family databases, also called non-relational column stores, wide-column databases, or simply column databases, are perhaps the NoSQL type that, on the surface, looks most similar to relational databases. Like relational databases, wide-column databases store data using concepts like rows and columns. Technically, however, a wide-column store is closer to a two-dimensional key-value store. These databases often support the notion of column families that are stored separately. Each such column family typically contains multiple columns that are used together.
@@ -129,7 +132,7 @@ Multi-model databases are databases that combine the functionality of more than 
 
 Collocating the data from multiple database types in the same system allows for novel operations that would be difficult or impossible otherwise. For instance, multi-model databases may allow users to access and manipulate data stored in different database types within a single query. Multi-model databases also help maintain data consistency, which can be a problem when performing operations that modify data in many systems at once.
 
-Many of the most popular relational databases actually support multi-model, including Oracle, MySQL, PostgreSQL and SQL Server. Many cloud databases are also multi-model, such as [Azure Cosmos DB](https://azure.microsoft.com/en-us/products/cosmos-db/)
+Many of the most popular relational databases actually support multi-model, including Oracle, MySQL, PostgreSQL and SQL Server. Many cloud databases are also multi-model, such as [Azure Cosmos DB](https://azure.microsoft.com/en-us/products/cosmos-db/) and [Azure SQL DB](https://azure.microsoft.com/en-us/products/azure-sql/database/).
 
 
 

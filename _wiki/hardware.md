@@ -2,6 +2,7 @@
 layout: page
 title: Basic Computer Architecture
 permalink: /wiki/hardware/
+date: 2023-01-14
 categories: 
   - compute
 tags:
@@ -47,7 +48,7 @@ Computer memory has a hierarchy based upon its operational speed. The CPU cache 
 The address space of the processor can contain devices other than memory. These are input/output devices (I/O devices, also known as peripherals) and are used by the processor to communicate with the external world. There are three types of peripherals:
 1. **Input peripherals**: Devices that enable user input, from the outside world to the computer. Examples: keyboard, mouse, touch pad, camera, microphone, scanner, etc.
 2. **Output peripherals**: Devices that enable information output, from the computer to the outside world. Examples: monitor, speakers, printer, etc.
-3. **Input/Output peripherals**: Devices that enable both input and output (between the computer and the outside world). Examples: touch screen, network card, hard disk, disk on key, etc.
+3. **Input/Output peripherals**: Devices that enable both input and output (between the computer and the outside world). Examples: touch screen, network interface card, hard disk, disk on key, etc.
 
 Data transfer to and from the peripherals may be done in any of the three possible ways:
 1. **Programmed I/O** – The processor accepts or delivers data as a result of the I/O instructions that are written in the computer program.

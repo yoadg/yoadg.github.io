@@ -2,6 +2,7 @@
 layout: page
 title: Computer Networks
 permalink: /wiki/network/
+date: 2023-01-21
 categories: 
   - network
 tags:
@@ -9,9 +10,9 @@ tags:
   - tcp/ip
   - osi
 ---
-A c*omputer network* is a set of interconnected computing devices that can exchange data and share resources with each other. Computers are connected over digital interconnections that are made up of telecommunication network technologies, based on physically wired, optical, and wireless radio-frequency (RF) methods, and may be arranged in a variety of network topologies. The network permits nodes connected to it to transfer messages to other nodes by merely providing the content of a message and the address of the destination node and letting the network find the way to deliver the message to the destination node. 
+A *computer network* is a set of interconnected computing devices that can exchange data and share resources with each other. Computers are connected over digital interconnections that are made up of telecommunication network technologies, based on physically wired, optical, and wireless radio-frequency (RF) methods, and may be arranged in a variety of network topologies. The network permits nodes connected to it to transfer messages to other nodes by merely providing the content of a message and the address of the destination node and letting the network find the way to deliver the message to the destination node. Each connected device is uniquely identified within a network segment by the Media Access Control (MAC) address, which is assigned to a Network Interface Controller (NIC).
 
-Computers use common communication protocols that define rules for exchanging information over the network. Communication protocols have various characteristics. They may be connection-oriented or connectionless, they may use circuit mode or packet switching, and they may use hierarchical addressing or flat addressing. In a protocol stack, communications functions are divided up into protocol layers, where each layer leverages the services of the layer below it until the lowest layer controls the hardware that sends information across the media. 
+Computers use common [communication protocols](/wiki/protocols) that define rules for exchanging information over the network. Communication protocols have various characteristics. They may be connection-oriented or connectionless, they may use circuit mode or packet switching, and they may use hierarchical addressing or flat addressing. In a protocol stack, communications functions are divided up into protocol layers, where each layer leverages the services of the layer below it until the lowest layer controls the hardware that sends information across the media. 
 
 ## OSI Model 
 The Open Systems Interconnection (OSI) model is a conceptual model that provides a common basis for the coordination of standards development for the purpose of systems interconnection. It also defines a logical network and effectively describes computer packet transfer. The OSI Model can be seen as a universal language for computer networking. It is essentially a reference system that lays out how computers communicate with each other over a network. It's based on the concept of splitting up a communication system into seven abstract layers, each one stacked upon the last.
@@ -33,7 +34,7 @@ The seven layers are:
 The Internet protocol suite, commonly known as *TCP/IP*, is a framework for organizing the set of communication protocols used in the Internet and similar computer networks according to functional criteria. This suite provides end-to-end data communication specifying how data should be packetized, addressed, transmitted, routed, and received.
 
 The TCP/IP model is a concise version of the OSI model. It contains four layers, unlike seven layers in the OSI model. The layers are:
-1. **Link / Network Access layer** - corresponds to the combination of Data Link layer and Physical layer of the OSI model. It looks out for hardware addressing and the protocols present in this layer allows for the physical transmission of data.
+1. **Link / Network Access layer** - corresponds to the combination of Data Link layer and Physical layer of the OSI model. This is layer is implemented in a hardware part like a NIC, which enables the physical transmission of data.
 2. **Internet layer** – parallels the functions of OSI’s Network layer. It defines the protocols which are responsible for logical transmission of data over the entire network. The main protocol residing at this layer is in the Internet Protocol (IP).
 3. **Transport / Host-to-Host layer** – analogous to the transport layer of the OSI model. It is responsible for end-to-end communication and error-free delivery of data. It shields the upper-layer applications from the complexities of data. The two main protocols present in this layer are: [Transmission Control Protocol (TCP)](#tcp) and [User Datagram Protocol (UDP)](#udp).
 4. **Application / Process layer** – performs the functions of the top three layers of the [OSI model](#osi-model): Application, Presentation and Session layer. It is responsible for node-to-node communication and controls user-interface specifications. Some of the protocols present in this layer are: HTTP, HTTPS, FTP, TFTP, Telnet, SSH, SMTP, SNMP, NTP, DNS, DHCP, NFS, X Window and LPD. 

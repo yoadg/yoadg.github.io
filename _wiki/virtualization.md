@@ -2,10 +2,12 @@
 layout: page
 title: Virtualization
 permalink: /wiki/virtualization/
+date: 2023-11-05
 categories: 
   - compute
 tags:
-  - 
+  - vm
+  - container
 ---
 Hardware Virtualization is technology that enables the creation of multiple simulated environments from a single, physical hardware system. With virtualization, a single [computer system](/wiki/hardware) (machine) can run numerous [operating systems](/wiki/os) simultaneously, each with potentially different applications and libraries inside. It is based on the creation of *virtual machines* that act like real computers with operating systems. Software executed on these virtual machines is separated from the underlying hardware resources. 
 
