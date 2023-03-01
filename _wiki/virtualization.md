@@ -2,7 +2,7 @@
 layout: page
 title: Virtualization
 permalink: /wiki/virtualization/
-date: 2023-11-05
+date: 2023-01-05
 categories: 
   - compute
 tags:

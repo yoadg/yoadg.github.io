@@ -5,6 +5,10 @@ permalink: /wiki/cloud/
 date: 2023-01-01
 categories: 
   - cloud
+tags:
+  - iaas
+  - paas
+  - saas
 ---
 Cloud computing is a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources (e.g., [networks](/wiki/network), [servers](/wiki/hardware), [data storage](/wiki/storage), development tools, applications and services) that can be rapidly provisioned and released with minimal management effort or service provider interaction. The resources are hosted at a remote data center managed by a *cloud service provider* (CSP) and are accessible as services over the [network](/wiki/network). It eliminates the need for companies to procure, configure, or manage resources themselves, and they only pay for what they use.
 

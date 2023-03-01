@@ -18,3 +18,6 @@ permalink: /wiki/
 ## Networking
 - [Computer Networks](/wiki/network)
 - [Communication Protocols](/wiki/protocols)
+
+## Application Interfaces
+- [Web Services](/wiki/web-services)

@@ -10,7 +10,7 @@ tags:
   - https
   - websocket
 ---
-A communication protocol allows two or more nodes of a communications system to transmit or exchange data, especially across a [network](/wiki/network). The protocol defines the rules, syntax, semantics and synchronization of communication and possible error recovery methods. Network protocols include mechanisms for device identification and the establishment of connections between them, as well as formatting rules that specify how packets and data are structured in messages that are sent and received. Some protocols support message recognition and data compression, designed for reliable, high-performance network communication. Protocols may be implemented by hardware, software or a combination of both. They are the backbone of the internet and other communication systems, ensuring that information is transmitted reliably and in the correct format.
+A communication protocol allows two or more nodes of a communications system to transmit or exchange data, especially across a [computer network](/wiki/network). The protocol defines the rules, syntax, semantics and synchronization of communication and possible error recovery methods. Network protocols include mechanisms for device identification and the establishment of connections between them, as well as formatting rules that specify how packets and data are structured in messages that are sent and received. Some protocols support message recognition and data compression, designed for reliable, high-performance network communication. Protocols may be implemented by hardware, software or a combination of both. They are the backbone of the internet and other communication systems, ensuring that information is transmitted reliably and in the correct format.
 
 Multiple protocols often describe different aspects of a single communication. A group of protocols designed to work together is known as a protocol suite or family; when implemented in software they are a protocol stack. In the [Internet Protocol (IP)](/wiki/network#internet-protocol) suite, the application layer (7th layer in the [OSI model](/wiki/network#osi-model)) contains the communications protocols and interface methods used in process-to-process communications across an IP computer network. The application layer only standardizes communication and depends upon the underlying transport layer protocols (TCP or UDP) to establish host-to-host data transfer channels and manage the data exchange in a client–server or peer-to-peer networking model.
 
@@ -67,7 +67,7 @@ The most basic form of HTTP is pull mode whereby a client sends a request to a s
   - OPTIONS – describes the communication options for the target resource
   - TRACE – performs a message loop-back test along the path to the target resource
   - PATCH – applies partial modifications to a resource.
-- Request Uniform Resource Identifier (URI), which includes the path to a specific resource on the server machine.
+- *Request Uniform Resource Identifier (URI)*, which includes the path to a specific resource on the server machine.
 - Optionally, the URI may include request parameters in the query component
 - HTTP version (e.g. HTTP/1.1).
 - Request *headers*, stored in key-value pairs (e.g., User-Agent which identifies the browser or application).
@@ -98,7 +98,7 @@ Server Sent Events (SSE) is a server push technology that enables a browser (cli
 WebSocket is a communication protocol, providing persistent, full-duplex communication channels over a single TCP connection. Unlike HTTP which is one way (half-duplex), a websocket connection provides the ability for two-way (full-duplex) communication between the client and the server, allowing both sides to send data at any time. WebSocket is designed to work over HTTP ports 443 and 80 as well as to support HTTP proxies and intermediaries, thus making it compatible with HTTP.
 
 ### HTTPS
-Hypertext Transfer Protocol Secure (HTTPS) is an extension of HTTP, which uses cryptography for secure communication and is widely used on the Internet. In HTTPS, the transmitted data is encrypted using Transport Layer Security (TLS) or formerly, Secure Sockets Layer (SSL). The protocol is therefore also referred to as HTTP over TLS, or HTTP over SSL. An HTTPS connection can protect the data transfer from the man-in-the-middle attacks and common security threats by providing bidirectional encryption for communications between a client and server.
+Hypertext Transfer Protocol Secure (HTTPS) is an extension of HTTP, which uses cryptography for secure communication and is widely used on the Internet. In HTTPS, the transmitted data is encrypted using *Transport Layer Security (TLS)* or formerly, *Secure Sockets Layer (SSL)*. The protocol is therefore also referred to as HTTP over TLS, or HTTP over SSL. An HTTPS connection can protect the data transfer from the man-in-the-middle attacks and common security threats by providing bidirectional encryption for communications between a client and server.
 
 Data in HTTPS is encrypted and decrypted through the following steps: 
 1. The client (typically browser) and the server establish a TCP connection.
