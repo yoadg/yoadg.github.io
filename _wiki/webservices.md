@@ -2,7 +2,7 @@
 layout: page
 title: Web Services
 permalink: /wiki/web-services/
-date: 2023-03-01
+date: 2023-04-07
 categories: 
   - interfaces
 tags:
@@ -12,7 +12,7 @@ tags:
   - graphql
 ---
 
-A web service is a generic name for a software system that supports interoperable machine-to-machine (M2M) interaction over a [computer network](/wiki/network). It allows distributed software applications to communicate and exchange data over the [Internet](/wiki/network#internet-protocol-suite), using Web protocols. A web service is typically based on a request-response model, where a server provides a set of functions that are hosted at a network addressable location, which can be remotely accessed by clients. A web technology such as [HTTP](/wiki/protocols#http) or [HTTPS](/wiki/protocols#https) is used for transferring machine-readable data formats such as XML and JSON. The protocol allows software programs written in a variety of programming languages and running on a variety of platforms to exchange data in a standardized and independent manner. This independence encourages web service based applications to be loosely coupled, component-oriented, cross-technology implementations. Web services can be used alone or with other web services to carry out a complex aggregation or a business transaction. 
+A web service is a generic name for a software system that supports interoperable machine-to-machine (M2M) interaction over a [computer network](/wiki/network). It allows distributed software applications to communicate and exchange data over the [Internet](/wiki/network#internet-protocol-suite), using Web protocols. A web service is typically based on a request-response model, where a server provides a set of functions that are hosted at a network addressable location, which can be remotely accessed by clients. A web technology such as [HTTP](/wiki/protocols#http) or [HTTPS](/wiki/protocols#https) is used for transferring machine-readable data formats such as [XML](/wiki/serialization#xml) and [JSON](/wiki/serialization#json). The protocol allows software programs written in a variety of programming languages and running on a variety of platforms to exchange data in a standardized and independent manner. This independence encourages web service based applications to be loosely coupled, component-oriented, cross-technology implementations. Web services can be used alone or with other web services to carry out a complex aggregation or a business transaction. 
 
 Web services are based on the following principles:
 - **Loosely Coupled** – The client and the web service are not bound to each other, which means that even if the web service changes over time, it should not change the way the client calls the web service. 
@@ -21,7 +21,7 @@ Web services are based on the following principles:
 - **Document Exchange** – XML and JSON can represent not only plain data but also structured documents. Web services support the transparent transfer of documents to facilitate business integration.
 
 ## API Protocols
-An *Application Programming Interface (API)* is a set of defined rules that enable different applications to communicate with each other. It’s sometimes referred to as a contract between an information provider and an information user – establishing the content required from the consumer (the request) and the content required by the producer (the response).
+An *Application Programming Interface (API)* is a set of defined rules that enable different computer programs (i.e. applications) to communicate with each other. It’s sometimes referred to as a contract between an information provider and an information user – establishing the content required from the consumer (the request) and the content required by the producer (the response).
 It acts as an intermediary layer that processes data transfers between systems, letting companies open their application data and functionality to external third-party developers, business partners, and internal departments within their companies.
 
 Traditionally, an API referred to an interface connected to a middleware, created with any of the low-level programming languages, such as C/C++, Java and Python. Such APIs are accessible within the application process through local procedure calling. Modern Web APIs however, are mostly remote, which means that they interact through a communication network to manipulate resources outside of the computer making the request. Web APIs are typically built on top of HTTP, resulting in developer-friendly interfaces that are easily accessible. 
@@ -32,7 +32,8 @@ In order to integrate applications quickly and at scale, APIs are realized using
 - *SOAP* (formerly the Simple Object Access Protocol) enables endpoints to send and receive data through XML over HTTP or SMTP. 
 - *REpresentational State Transfer (REST)* is a set of web API architecture principles. 
 - *GraphQL* is a data query language that uniquely allows clients to request any specific data that they need.
-- *gRPC* is a high-performance, open-source RPC framework, which uses Protocol Buffers to serialize and parse data. 
+- *gRPC* is a high-performance, open-source RPC framework, which uses [Protocol Buffers](/wiki/serialization#protocol-buffers) to serialize and parse data. 
+- *Thrift* is an RPC framework for creating interoperable and scalable services. 
 
 ### XML-RPC
 **XML-RPC** is a simple protocol which permits programs to make function or procedure calls across a network over HTTP. It uses a small XML vocabulary to describe the nature of requests and responses. XML-RPC client specifies a procedure name and parameters in XML format, which is sent to the server in an HTTP POST request. The server returns either a fault or a response in XML format. XML-RPC parameters are a simple list of types and content – structs and arrays are the most complex types available. It has no notion of objects and no mechanism for including information that uses other XML vocabulary.
@@ -76,7 +77,7 @@ GraphQL is a strongly typed language in which each level of a GraphQL query corr
 GraphQL starts with building a schema, which is a description of all the queries that can be done in a GraphQL API and all the types that they return. Having the schema before querying, a client can validate their query against making sure the server will be able to respond to it. On reaching the backend application, a GraphQL operation is interpreted against the entire schema, and resolved with data for the frontend application. Sending one massive query to the server, the API returns a JSON response with exactly the shape of the data that the client asked for. 
 
 ## gRPC
-**gRPC** is a schema-driven RPC framework that brings performance benefits and modern features to client-server applications. It is a cross-platform, open-source, contract-based communication protocol that streamlines and controls interservice communication by providing a set of functions to remote clients. Built on top of HTTP/2, gRPC leverages features such as authentication, bidirectional streaming and flow control, blocking or nonblocking bindings, and cancellation and timeouts. It enables more efficient communication through serialized binary payloads. gRPC uses Protocol Buffers (Protobuf) by default as its mechanism for structured data serialization.
+**gRPC** is a schema-driven RPC framework that brings performance benefits and modern features to client-server applications. It is a cross-platform, open-source, contract-based communication protocol that streamlines and controls interservice communication by providing a set of functions to remote clients. Built on top of HTTP/2, gRPC leverages features such as authentication, bidirectional streaming and flow control, blocking or nonblocking bindings, and cancellation and timeouts. It enables more efficient communication through serialized binary payloads. gRPC uses *Protocol Buffers* (Protobuf) by default as its mechanism for structured data serialization.
 
 Protocol Buffers are more than just a serialized format. They are used as an *Interface Definition Language (IDL)* which defines the API interface (service definition). It serves as a contract between the client and the server, specifying the supported services, methods and messages (data structures). gRPC generates cross-platform client and server bindings for many languages. On the server side, the server implements the API interface and runs a gRPC server to handle client calls. On the client side, the client has a stub (referred to as just a client in some languages) that provides the same methods as the server.
 
@@ -85,3 +86,7 @@ There are 4 communication methods supported by gRPC:
 - **Client-Streaming**: First, the client streams a series of requests to the server, followed by a message to inform that the stream is over. Finally, the server sends a single reply.
 - **Server-Streaming**: First, the client makes a single request to the server. Then, the server sends a stream of messages to the client.
 - **Bidirectional Streaming**: Both client and the server can send messages at any time after establishing the initial connection.
+
+## Thrift
+**Apache Thrift** is an IDL and binary communication protocol used for defining and creating services for numerous programming languages. With an RPC framework it combines a software stack with a code generation engine to build cross-platform services which can connect applications written in a variety of languages and frameworks. Thrift provides clean abstractions for data transport, data serialization, and application level processing. Thrift is a set of code-generation tools that allows developers to build RPC clients and servers by just defining the data types and service interfaces in a simple definition file. Given this file as an input, code is generated to build RPC clients and servers that communicate seamlessly across programming languages. In addition to interoperability, Thrift can be very efficient through a unique serialization mechanism that is efficient in both time and space.
+
