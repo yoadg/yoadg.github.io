@@ -2,7 +2,7 @@
 layout: page
 title: Databases
 permalink: /wiki/databases/
-date: 2023-01-09
+date: 2023-04-19
 categories: 
   - data stores
 tags:
@@ -85,8 +85,7 @@ Database types, sometimes referred to as database models or database families, a
 *Database types*
 
 ## Relational Databases
-Relational databases are the oldest general purpose database type still widely used today. In fact, relational databases comprise the majority of databases currently used in production.
-Relational databases organize data using tables (or "relations") of columns (or fields) and rows (or records). Tables are structures that impose a schema on the records that they hold. Each column within a table has a name and a data type. Each row represents an individual record or data item within the table, which contains values for each of the columns. Each row in a table could be marked with a unique identifier called a primary key, and rows among multiple tables can be made related using foreign keys. This allows the data to be structured across multiple tables, which can be joined together via a primary key or a foreign key. These unique identifiers demonstrate the different relationships which exist between tables.
+Relational databases are the oldest general purpose database type still widely used today. In fact, relational databases comprise the majority of databases currently used in production. Relational databases organize data using tables (or "relations") of columns (or fields) and rows (or records). Tables are structures that impose a schema on the records that they hold. Each column within a table has a name and a data type. Each row represents an individual record or data item within the table, which contains values for each of the columns. Each row in a table could be marked with a unique identifier called a primary key, and rows among multiple tables can be made related using foreign keys. This allows the data to be structured across multiple tables, which can be joined together via a primary key or a foreign key. These unique identifiers demonstrate the different relationships which exist between tables. Relational databases offer various indexing techniques and query optimization strategies, which help improve query performance and reduce resource consumption.
 
 Relational DBs are typically provisioned to a single server and scale vertically by adding more resources to the machine. Many RDBMS support built-in replication features where copies of the primary database can be made to other secondary server instances. Write operations are made to the primary instance and replicated to each of the secondaries. Upon a failure, the primary instance can fail over to a secondary to provide high availability. Secondaries can also be used to distribute read operations. While writes operations always go against the primary replica, read operations can be routed to any of the secondaries to reduce system load. Data can also be horizontally partitioned across multiple nodes, such as with sharding.
 
@@ -100,7 +99,7 @@ Key-value stores don't prescribe any schema for the data they store, and as such
 Many of the key-value stores are implemented as in-memory cache solutions, such as [Redis](https://redis.io/) and [Memcached](https://memcached.org/). There are also persistent key-value databases such as [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) and [etcd](https://etcd.io/).
 
 ## Document Databases
-Document databases, also known as document-oriented databases or document stores, share the basic access and retrieval semantics of key-value stores. A document store is a key-value store that restricts values to semi-structured formats such as XML, JSON or BSON. These values are referred to as documents. Each document is effectively an object containing attribute metadata along with a typed value such as string, date, binary or an array. This provides a way to index and query data based on the attributes in the document. It is not only possible to fetch an entire document by its ID, but also to retrieve only parts of a document, e.g. the age of a customer, and to execute queries like aggregation, query-by-example or even full-text search. So, unlike with key-value stores, the content stored in document databases can be queried and analyzed.
+Document databases, also known as document-oriented databases or document stores, share the basic access and retrieval semantics of key-value stores. A document store is a key-value store that restricts values to semi-structured formats such as [XML](/wiki/serialization#xml), [JSON](/wiki/serialization#json) or [BSON](/wiki/serialization#bson). These values are referred to as documents. Each document is effectively an object containing attribute metadata along with a typed value such as string, date, binary or an array. This provides a way to index and query data based on the attributes in the document. It is not only possible to fetch an entire document by its ID, but also to retrieve only parts of a document, e.g. the age of a customer, and to execute queries like aggregation, query-by-example or even full-text search. So, unlike with key-value stores, the content stored in document databases can be queried and analyzed.
 
 Though the data within documents is organized within a structure, document databases do not prescribe any specific format or schema. Each document can have a different internal structure that the database interprets. Groups of documents are called collections, but each document in a collection can have a different structure. Relationships are not stored within such collections and hence, joins are not available in the database. Alternatively, a set of documents can be embedded within a document to provide a level of denormalization.
 
@@ -125,7 +124,7 @@ Time-series databases are data stores that focus on collecting and managing valu
 
 In terms of read and write characteristics, time series databases are heavily write oriented. They are designed to handle a constant influx of incoming data. In general, time series databases work with regular, consistent streams of data without many spikes, which makes it simpler to plan around than some other types of data. Performance often depends on the number of items being tracked, the polling interval between recording new values, and the actual data payload that needs to be saved.
 
-Examples of Time-series DBs: [Prometheus](https://prometheus.io/), [InfluxDB](https://www.influxdata.com/), Whisper
+Examples of Time-series DBs: [Prometheus](https://prometheus.io/), [InfluxDB](https://www.influxdata.com/), [Whisper](https://github.com/graphite-project/whisper), [Timescale](https://www.timescale.com/)
 
 ## Multi-Model Databases
 Multi-model databases are databases that combine the functionality of more than one type of database. The benefits of this approach are clear — the same system can use different representations for different types of data.

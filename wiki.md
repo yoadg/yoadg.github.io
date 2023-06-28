@@ -19,8 +19,9 @@ permalink: /wiki/
 - [Computer Networks](/wiki/network)
 - [Communication Protocols](/wiki/protocols)
 
-## Application Interfaces
+## Communication Methods
 - [Web Services](/wiki/web-services)
+- [Messaging](/wiki/messaging)
 
 ## Data Processing
 - [Data Serialization](/wiki/serialization)

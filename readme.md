@@ -2,10 +2,10 @@
 
 The (almost) complete guide for designing software systems in the cloud
 Overview of the fundamental concepts, building blocks and design patterns of cloud-based software systems, including:
-- Compute platforms
-- Storage
-- Databases
-- Messaging buses
-- Communication protocols
+- Cloud computing
+- Compute infrastructure
+- Data stores
+- Networking
+- Communication methods
 - Micro-services architecture
 - Serverless computing

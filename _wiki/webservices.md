@@ -4,7 +4,7 @@ title: Web Services
 permalink: /wiki/web-services/
 date: 2023-04-07
 categories: 
-  - interfaces
+  - communication
 tags:
   - soap
   - rest
@@ -79,12 +79,12 @@ GraphQL starts with building a schema, which is a description of all the queries
 ## gRPC
 **gRPC** is a schema-driven RPC framework that brings performance benefits and modern features to client-server applications. It is a cross-platform, open-source, contract-based communication protocol that streamlines and controls interservice communication by providing a set of functions to remote clients. Built on top of HTTP/2, gRPC leverages features such as authentication, bidirectional streaming and flow control, blocking or nonblocking bindings, and cancellation and timeouts. It enables more efficient communication through serialized binary payloads. gRPC uses *Protocol Buffers* (Protobuf) by default as its mechanism for structured data serialization.
 
-Protocol Buffers are more than just a serialized format. They are used as an *Interface Definition Language (IDL)* which defines the API interface (service definition). It serves as a contract between the client and the server, specifying the supported services, methods and messages (data structures). gRPC generates cross-platform client and server bindings for many languages. On the server side, the server implements the API interface and runs a gRPC server to handle client calls. On the client side, the client has a stub (referred to as just a client in some languages) that provides the same methods as the server.
+Protocol Buffers are more than just a serialized format. They are used as an *Interface Definition Language (IDL)* which defines the API interface (service definition). It serves as a contract between the client and the server, specifying the supported services, methods and messages (request and response data structures). gRPC generates cross-platform client and server bindings for many languages. On the server side, the server implements the API interface and runs a gRPC server to handle client calls. On the client side, the client has a stub (referred to as just a client in some languages) that provides the same methods as the server.
 
 There are 4 communication methods supported by gRPC:
-- **Unary**: First, the client makes a single request to the server. Then, the server sends a single response.
-- **Client-Streaming**: First, the client streams a series of requests to the server, followed by a message to inform that the stream is over. Finally, the server sends a single reply.
-- **Server-Streaming**: First, the client makes a single request to the server. Then, the server sends a stream of messages to the client.
+- **Unary**: The client makes a single request to the server and expects a single response.
+- **Client-Streaming**: The client streams a series of requests to the server, followed by a message to inform that the stream is over. The server sends back a single response.
+- **Server-Streaming**: The client makes a single request to the server. The server sends back a stream of messages to the client.
 - **Bidirectional Streaming**: Both client and the server can send messages at any time after establishing the initial connection.
 
 ## Thrift

@@ -2,13 +2,14 @@
 layout: page
 title: Computer Networks
 permalink: /wiki/network/
-date: 2023-01-21
+date: 2023-04-23
 categories: 
   - network
 tags:
   - internet
   - tcp/ip
   - osi
+  - dns
 ---
 A *computer network* is a set of interconnected computing devices that can exchange data and share resources with each other. Computers are connected over digital interconnections that are made up of telecommunication network technologies, based on physically wired, optical, and wireless radio-frequency (RF) methods, and may be arranged in a variety of network topologies. The network permits nodes connected to it to transfer messages to other nodes by merely providing the content of a message and the address of the destination node and letting the network find the way to deliver the message to the destination node. Each connected device is uniquely identified within a network segment by the Media Access Control (MAC) address, which is assigned to a Network Interface Controller (NIC).
 
@@ -18,13 +19,13 @@ Computers use common [communication protocols](/wiki/protocols) that define rule
 The Open Systems Interconnection (OSI) model is a conceptual model that provides a common basis for the coordination of standards development for the purpose of systems interconnection. It also defines a logical network and effectively describes computer packet transfer. The OSI Model can be seen as a universal language for computer networking. It is essentially a reference system that lays out how computers communicate with each other over a network. It's based on the concept of splitting up a communication system into seven abstract layers, each one stacked upon the last.
 
 The seven layers are:
-1. **Physical layer** – this layer is responsible for the transmission and reception of unstructured raw data between a device, and a physical transmission medium. It converts the digital bits into electrical, radio, or optical signals. 
-2. **Data Link layer** – this layer provides direct node-to-node data transfer. It detects and possibly corrects errors that may occur in the physical layer. It defines the protocol to establish and terminate a connection between two physically connected devices.
-3. **Network layer** – this layer provides the functional and procedural means of transferring small units of data, called packets, between two different networks. Many nodes may be connected to a single network, where each of them has a unique address. The network layer also finds the best physical path for the data to reach its destination (known as routing). Message delivery at the network layer is not necessarily guaranteed to be reliable.
-4. **Transport layer** – this layer provides the functional and procedural means of transferring variable-length data between two devices across a network, while maintaining the quality-of-service (QoS) functions. This may require breaking large protocol data units or long data streams into smaller chunks called "segments". Transport protocols may be connection-oriented or connectionless.
-5. **Session layer** – this layer creates the setup, controls the connections, and ends the teardown, between two or more computers, which is called a "session". The session layer ensures that the session stays open long enough to transfer all the data being exchanged, and then promptly closes the session in order to avoid wasting resources. 
-6. **Presentation layer** – this layer establishes data formatting and data translation into a format specified by the application layer during the encapsulation of outgoing messages while being passed down the protocol stack, and possibly reversed during the deencapsulation of incoming messages when being passed up the protocol stack. The functions of the presentation layer are translation (serialization/deserialization), encryption/decryption, and compression.
-7. **Application layer** – this layer, which is implemented in software, is the only layer that directly interacts with data from the user. Applications like web browsers and email clients rely on the application layer to initiate communication through protocols such as HTTP and SMTP. 
+1. **Physical layer** – This layer is responsible for the transmission and reception of unstructured raw data between a device, and a physical transmission medium. It receives *frames* in the form of digital bits and converts them into analog or digital signals, propagating them through channels such as coaxial cable, fiber optic cable, DSL cable, etc. 
+2. **Data Link layer** – This layer provides direct node-to-node data transfer. It detects and possibly corrects errors that may occur in the physical layer. It defines the protocol to establish and terminate a connection between two physically connected devices.
+3. **Network layer** – This layer provides the functional and procedural means of transferring small units of data, called *packets*, between two different networks. Each packet is enriched with a source and destination IP address, which uniquely identifies a node in the network. The Network layer also finds the best physical path for the data to reach its destination (known as routing). Message delivery at this layer is not necessarily guaranteed to be reliable.
+4. **Transport layer** – This layer provides the functional and procedural means of transferring variable-length data  between two devices across a network, while maintaining the Quality-of-Service (QoS) functions. This may require breaking large protocol data units or long data streams into smaller chunks called *segments*. Each segment is enriched with a source and destination port. Transport protocols may be connection-oriented or connectionless.
+5. **Session layer** – This layer creates the setup, controls the connections, and ends the teardown, between two or more computers, which is called a *session*. It ensures that the session stays open long enough to transfer all the data being exchanged, and then promptly closes the session in order to avoid wasting resources. 
+6. **Presentation layer** – This layer establishes data formatting and data translation into a format specified by the application layer during the encapsulation of outgoing messages while being passed down the protocol stack (serialization), and possibly reversed during the decapsulation of incoming messages when being passed up the protocol stack (deserialization). Other functions of the Presentation layer are encryption and compression. 
+7. **Application layer** – This layer, which is implemented in software, is the only layer that directly interacts with data from the user. Applications like web browsers and email clients rely on the application layer to initiate communication through protocols such as HTTP and SMTP. 
 
 ![Computer network](/assets/images/network.png)
 
