@@ -50,9 +50,10 @@ The CAP Theorem (introduced by Professor Eric A. Brewer) refers to three charact
 
 The CAP theorem states that in a distributed data store system, it is impossible to simultaneously guarantee all the above three properties. This theorem has important implications for the design of distributed systems, particularly when it comes to choosing between consistency and availability in the face of network failures. It places an ultimate upper bound on what can possibly be accomplished by a distributed system. Brewer argues that a system can be both available and consistent in normal operation, but in the presence of a system partition, this is not possible: If the system continues to work in spite of the partition, there is some non-failing node that has lost contact to the other nodes and thus has to decide to either continue processing client requests to preserve availability (AP, eventual consistent systems) or to reject client requests in order to uphold consistency guarantees (CP). The first option violates consistency, because it might lead to stale reads and conflicting writes, while the second option obviously sacrifices availability.
 
-## ACID vs. BASE Database Models
+## Database Models
 Some databases are built to guarantee strong consistency (ACID) while others favor availability (BASE). 
 
+### ACID
 The ACID database transaction model ensures that a performed transaction is always consistent. ACID stands for:
 - **Atomic** – Each transaction is either properly carried out or the process halts and the database reverts back to the state before the transaction started. This ensures that all data in the database is valid.
 - **Consistent** – A processed transaction will never endanger the structural integrity of the database.
@@ -63,6 +64,7 @@ Relational Database Management Systems (RDBMS), also known as SQL databases, pro
 
 While ACID is a building block of relational DBs, many NoSQL DBs are built as distributed systems, and they can’t always ensure complete transactional consistency. As indicated by the CAP theorem, such databases need to choose between full consistency and full availability. Therefore, BASE was introduced as a loose version of ACID characteristics. 
 
+### BASE
 BASE stands for:
 - **Basically Available** – Rather than enforcing immediate consistency, BASE-modeled NoSQL databases will ensure availability of data by spreading and replicating it across the nodes of the database cluster.
 - **Soft State** – Due to the lack of immediate consistency, data values may change over time. The BASE model breaks off with the concept of a database which enforces its own consistency, delegating that responsibility to developers.

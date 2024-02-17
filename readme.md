@@ -7,5 +7,6 @@ Overview of the fundamental concepts, building blocks and design patterns of clo
 - Data stores
 - Networking
 - Communication methods
+- Data processing
 - Micro-services architecture
 - Serverless computing
