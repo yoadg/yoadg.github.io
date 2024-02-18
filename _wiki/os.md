@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Operating System
+title: Operating Systems
 permalink: /wiki/os/
 date: 2022-11-05
 categories: 

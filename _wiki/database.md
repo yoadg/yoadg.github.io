@@ -44,7 +44,7 @@ A database query is a formatted command used to make a request to access data fr
 # Database Consistency and Availability 
 ## The CAP Theorem 
 The CAP Theorem (introduced by Professor Eric A. Brewer) refers to three characteristics of distributed data stores:
-- **Consistency** – Every read operation returns the latest write operation.
+- **Consistency** – Every read operation returns the latest write operation or an error.
 - **Availability** – Every request receives a non-error response, without the guarantee that it contains the latest write.
 - **Partition tolerance** – The system continues to operate despite network failures (e.g., dropped partitions, slow network connections, or unavailable network connections between nodes). 
 
@@ -55,8 +55,8 @@ Some databases are built to guarantee strong consistency (ACID) while others fav
 
 ### ACID
 The ACID database transaction model ensures that a performed transaction is always consistent. ACID stands for:
-- **Atomic** – Each transaction is either properly carried out or the process halts and the database reverts back to the state before the transaction started. This ensures that all data in the database is valid.
-- **Consistent** – A processed transaction will never endanger the structural integrity of the database.
+- **Atomic** – Each transaction is either properly carried out or the process halts and the database reverts back to the state before the transaction started. This ensures that all data in the database is valid ("all or nothing").
+- **Consistent** – A processed transaction will never endanger the structural integrity of the database. Any data written by a transaction must be valid according to all defined rules and maintain the database in a good state.
 - **Isolated** – Transactions cannot compromise the integrity of other transactions by interacting with them while they are still in progress.
 - **Durable** – The data related to the completed transaction will persist even in the cases of network or power outages. If a transaction fails, it will not impact the manipulated data.
 
@@ -75,7 +75,7 @@ BASE provides several advantages over ACID compliant databases which are distrib
 # Database Types
 Database types, sometimes referred to as database models or database families, are the patterns and structures used to organize data within a DBMS. Many different database types have been developed over the years. Modern databases are roughly divided into two major paradigms: relational (SQL) databases and non-relational (NoSQL) databases. The following table summarizes the five main differences between relational and non-relational databases:
 
-|         | Relational DBs (SQL) | NoSQL DBs |
+|         | Relational DBs | Non-Relational (NoSQL) DBs |
 | ------- | -------------------- | --------- |
 | Data model | Tables with rows and columns | Various models: key-values, documents, columns, graph |
 | Data schema | Strict, rigid and predefined schema | Schemaless (flexible schema may be applied by the application) |
@@ -94,35 +94,37 @@ Relational DBs are typically provisioned to a single server and scale vertically
 
 Many of the most widely used databases are relational, such as [Oracle](https://www.oracle.com/database/), [MySQL](https://www.mysql.com/), [SQL Server](https://www.microsoft.com/en-gb/sql-server), [PostgreSQL](https://www.postgresql.org/), [MariaDB](https://mariadb.org/) and [IBM Db2](https://www.ibm.com/products/db2). 
 
-## Key-Value Databases
+## Non-Relational (NoSQL) Databases
+
+### Key-Value Databases
 Key-value databases, or key-value stores, are one of the simplest database types. Key-value stores work by storing arbitrary data accessible through unique keys. In most basic implementations, the database does not evaluate the data it is storing and allows limited ways of interacting with it. Pure key-value stores do not support operations beyond simple CRUD. Some implementations provide more complex actions on top of this foundation according to the basic data type stored under each key. For instance, they might be able to increment numeric values or perform slices or other operations on lists. Since many key-value stores load their entire datasets into memory, these operations can be completed very efficiently.
 
 Key-value stores don't prescribe any schema for the data they store, and as such, are often used to store many different types of data at the same time. The user is responsible for defining any naming scheme for the keys that will help identify the values and are responsible for ensuring the value is of the appropriate type and format. Key-value storage is most useful as a lightweight solution for storing simple values that can be operated on externally after retrieval.
 
 Many of the key-value stores are implemented as in-memory cache solutions, such as [Redis](https://redis.io/) and [Memcached](https://memcached.org/). There are also persistent key-value databases such as [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) and [etcd](https://etcd.io/).
 
-## Document Databases
+### Document Databases
 Document databases, also known as document-oriented databases or document stores, share the basic access and retrieval semantics of key-value stores. A document store is a key-value store that restricts values to semi-structured formats such as [XML](/wiki/serialization#xml), [JSON](/wiki/serialization#json) or [BSON](/wiki/serialization#bson). These values are referred to as documents. Each document is effectively an object containing attribute metadata along with a typed value such as string, date, binary or an array. This provides a way to index and query data based on the attributes in the document. It is not only possible to fetch an entire document by its ID, but also to retrieve only parts of a document, e.g. the age of a customer, and to execute queries like aggregation, query-by-example or even full-text search. So, unlike with key-value stores, the content stored in document databases can be queried and analyzed.
 
 Though the data within documents is organized within a structure, document databases do not prescribe any specific format or schema. Each document can have a different internal structure that the database interprets. Groups of documents are called collections, but each document in a collection can have a different structure. Relationships are not stored within such collections and hence, joins are not available in the database. Alternatively, a set of documents can be embedded within a document to provide a level of denormalization.
 
 Examples of Document DBs: [MongoDB](https://www.mongodb.com/), [Couchbase](https://www.couchbase.com/), [CouchDB](https://couchdb.apache.org/)
 
-## Graph Databases
+### Graph Databases
 Graph databases are a type of NoSQL database that takes a different approach to establishing relationships between data. Rather than mapping relationships with tables and foreign keys, graph databases establish connections using the concepts of nodes, edges, and properties. Graph databases represent data as individual nodes which can have any number of properties associated with them. Between these nodes, edges (also called relationships) are established to represent different types of connections. In this way, the database encodes information about the data items within the nodes and information about their relationship in the edges that connect the nodes.
 
 Graph databases can be implemented as a native graph; which means they store data in the graph model described above, while non-native graphs store data in relational or other NoSQL databases and use graph processing engines for data access. Native Graphs implement index-free adjacency for data access.
 
 Examples of Graph DBs: [Neo4j](https://neo4j.com/), [JanusGraph](https://janusgraph.org/), [Amazon Neptune](https://aws.amazon.com/neptune/)
 
-## Column-Family Databases
+### Column-Family Databases
 Column-family databases, also called non-relational column stores, wide-column databases, or simply column databases, are perhaps the NoSQL type that, on the surface, looks most similar to relational databases. Like relational databases, wide-column databases store data using concepts like rows and columns. Technically, however, a wide-column store is closer to a two-dimensional key-value store. These databases often support the notion of column families that are stored separately. Each such column family typically contains multiple columns that are used together.
 
 Column-family databases are implemented as multidimensional nested sorted map of maps. The innermost map constitutes a version of the data identified by a timestamp and stored in a cell. A cell is mapped to a column which in turn is mapped to a column family. A set of column families are identified using a row key. Read and write is performed using the row key on sets of columns. These columns are stored as a continuous entry on the disk, enhancing performance and enabling users to access only the specific columns they need without allocating additional memory on irrelevant data.
 
 Examples of Column-family DBs: [Cassandra](https://cassandra.apache.org/), [HBase](https://hbase.apache.org/), [Cloud Bigtable](https://cloud.google.com/bigtable)
 
-## Time-Series Databases
+### Time-Series Databases
 Time-series databases are data stores that focus on collecting and managing values that change over time. Although sometimes considered a subset of other database types, like key-value stores, time-series databases are prevalent and unique enough to warrant their own consideration. Many time-series databases are organized into structures that record the values for a single item over time (metrics). For example, a table or similar structure could be created to track CPU temperature. Inside, each value would consist of a timestamp and a temperature value to map what the temperature was at specific points in time.
 
 In terms of read and write characteristics, time series databases are heavily write oriented. They are designed to handle a constant influx of incoming data. In general, time series databases work with regular, consistent streams of data without many spikes, which makes it simpler to plan around than some other types of data. Performance often depends on the number of items being tracked, the polling interval between recording new values, and the actual data payload that needs to be saved.

@@ -2,9 +2,10 @@
 layout: page
 title: Communication Protocols
 permalink: /wiki/protocols/
-date: 2023-01-25
+date: 2024-02-18
 categories: 
   - network
+  - communication
 tags:
   - http
   - https
@@ -52,47 +53,55 @@ Some of the most common protocols are described in the following table:
 | XMPP | Extensible Messaging and Presence Protocol | Designed for instant messaging (IM), presence information, and contact list maintenance. | Instant messaging (chat) | 5222 |
 
 ## HTTP
-The Hypertext Transfer Protocol (HTTP) is a communication protocol for distributed, collaborative, hypermedia information systems. HTTP is the foundation of data communication for the World Wide Web (WWW), where hypertext documents include hyperlinks to other resources that the user can easily access. It is used for fetching resources such as HTML documents, images, video files etc. HTTP functions as a request–response protocol in the client–server model. The majority of the communication on the web happens over HTTP, which is not only used for Web browsing, but also as the underlying communication protocol for Web Service APIs (e.g. SOAP, JSON-RPC, XML-RPC, REST, GraphQL, gRPC). 
+The Hypertext Transfer Protocol (HTTP) is a communication protocol for distributed, collaborative, hypermedia information systems. HTTP is the foundation of data communication for the World Wide Web (WWW), where hypertext documents include hyperlinks to other resources that the user can easily access. It is used for fetching resources such as HTML documents, images, video files etc. HTTP functions as a request–response protocol in the client–server model. The majority of the communication on the web happens over HTTP, which is not only used for Web browsing, but also as the underlying communication protocol for [Web Service APIs](/wiki/web-services) (e.g. SOAP, JSON-RPC, XML-RPC, REST, GraphQL, gRPC). 
 
 ### HTTP Request and Response
 The most basic form of HTTP is pull mode whereby a client sends a request to a server and the server sends back a response, after which the connection is closed. An HTTP request is made up of the following elements:
 
 - HTTP method, which indicates the action that the client expects from the queried server:
-  - GET – requests a representation of the specified resource
-  - HEAD – asks for a response identical to a GET request, but without the response body
-  - POST – submits an entity to the specified resource, often causing a change in state or side effects on the server.
-  - PUT – replaces all current representations of the target resource with the request payload.
-  - DELETE – deletes the specified resource
-  - CONNECT – establishes a tunnel to the server identified by the target resource
-  - OPTIONS – describes the communication options for the target resource
-  - TRACE – performs a message loop-back test along the path to the target resource
+  - GET – requests a representation of the specified resource;
+  - HEAD – asks for a response identical to a GET request, but without the response body;
+  - POST – submits an entity to the specified resource, often causing a change in state or side effects on the server;
+  - PUT – replaces all current representations of the target resource with the request payload;
+  - DELETE – deletes the specified resource;
+  - CONNECT – establishes a tunnel to the server identified by the target resource;
+  - OPTIONS – describes the communication options for the target resource;
+  - TRACE – performs a message loop-back test along the path to the target resource;
   - PATCH – applies partial modifications to a resource.
 - *Request Uniform Resource Identifier (URI)*, which includes the path to a specific resource on the server machine.
 - Optionally, the URI may include request parameters in the query component
 - HTTP version (e.g. HTTP/1.1).
-- Request *headers*, stored in key-value pairs (e.g., User-Agent which identifies the browser or application).
+- Request *headers*, stored in key-value pairs, such as:
+  - *User-Agent* which identifies the browser or application;
+  - *Connection* which indictaes persistent connections (Keep-Alive);
+  - *Content-Type* and *Content-Length* for *POST* requests.
 - Optionally, a *body* with client supplied data (payload).
 
 An HTTP response is made up of the following elements:
-- Response headers, in the same format as provided in the request. These headers provide meta-information about the content of the response, such as Content-Type and Content-Length.  
+- Response headers, in the same format as provided in the request. These headers provide meta-information about the content of the response, such as *Content-Type* and *Content-Length*.  
 - A body with the content of the response (can be empty).
 - A status code that indicates whether the request has been successfully completed. This a 3-digits code, where the first digit indicates the status class:
-  - 1xx informational response – the request was received, continuing process
-  - 2xx successful – the request was successfully received, understood, and accepted
-  - 3xx redirection – further action needs to be taken in order to complete the request
-  - 4xx client error – the request contains bad syntax or cannot be fulfilled
+  - 1xx informational response – the request was received, continuing process;
+  - 2xx successful – the request was successfully received, understood, and accepted;
+  - 3xx redirection – further action needs to be taken in order to complete the request;
+  - 4xx client error – the request contains bad syntax or cannot be fulfilled;
   - 5xx server error – the server failed to fulfill an apparently valid request.
 
 ### HTTP Push
-HTTP Push allows the server to send data to the client without waiting for an explicit request. In this mode, the client sends the request for particular information to the server, just for the first time. After that, the connection remains open and the server keeps pushing new updates to the client whenever they are available. This helps to reduce the load on the network with the advantage that the updates are received in a timely manner. A drawback to this paradigm is that the server has to maintain connection to the client which creates certain overhead on the server.
+HTTP serves most scenarios well, especially when responses are immediate. However, in situations where the server needs to push updates to the client, especially when those updates depend on events not predictable by the client (such as another user's actions), simple HTTP request-response may not be the most efficient approach. This is because HTTP is fundamentally a pull-based protocol where the client has to initiate all requests. 
 
-There are multiple technologies involved in the HTTP Push based mechanism such as:
+There are multiple technologies that enable HTTP Push, such as:
+
+#### HTTP Short Polling
+The simplest method of pushing data to the client is based on *HTTP Short Polling*. In this approach, the client, which could be a web app running in a browser, repeatedly sends HTTP requests to the server. Whenever the server has new data for the client, it will be returned as a response for the polling request. The main problem of this method is that it sends an excessive number of HTTP requests. This takes up bandwidth and increases the server load. Also, data can be pushed only after a polling request has been initiated by the client, which might cause delays. 
 
 #### HTTP Long Polling
 With long polling, a client connects to a server, makes a request and waits for a response. After receiving the request, the server checks if it has any new data which has not been already sent to the client. If there is, it sends the data to the client in its response and closes the connection. if there isn't, it does not immediately send a response but rather keeps the connection open and waits until there is new data to be sent. Only then a response will be sent down to the client. After receiving the response, the client sends another request to the server and the process is repeated over and over again.
 
+Although long polling cuts down the number of requests, each open request still maintains a connection to the server. If there are many clients, this can put strain on the server resources.
+
 #### Server Sent Events
-Server Sent Events (SSE) is a server push technology that enables a browser (client) to receive automatic updates like text-based event data from a server via an HTTP connection. The client establishes a persistent and long-term connection with the server. The server uses this connection to continuously send events to the client. 
+Server Sent Events (SSE) is a server push technology that enables a browser (client) to receive automatic updates like text-based event data from a server via an HTTP connection. The client establishes a persistent and long-term connection with the server. The server uses this connection to continuously send events to the client. This setup is ideal for situations where the server needs to regularly push data to the client, while the client just receives the data without needing to send information back to the server. A typical example is live stock market data updates. 
 
 #### WebSocket
 WebSocket is a communication protocol, providing persistent, full-duplex communication channels over a single TCP connection. Unlike HTTP which is one way (half-duplex), a websocket connection provides the ability for two-way (full-duplex) communication between the client and the server, allowing both sides to send data at any time. WebSocket is designed to work over HTTP ports 443 and 80 as well as to support HTTP proxies and intermediaries, thus making it compatible with HTTP.
@@ -110,15 +119,15 @@ Data in HTTPS is encrypted and decrypted through the following steps:
 7. Now that both the client and the server hold the same session key (symmetric encryption), the encrypted data is transmitted in a secure bi-directional channel.
 
 ### HTTP Versions
-The first HTTP release was a one line protocol where GET was the only request method and the response contained only HTML content.  
+HTTP had undergone significant transformations since its inception in 1989 with version 0.9. The first HTTP release was a one line protocol where GET was the only request method and the response contained only HTML content.  
 
 **HTTP 1.0** was designed as a browser-friendly protocol with the following features: 
-- Provided header fields including rich metadata about both request and response (HTTP version number, status code, content type)
-- Response: not limited to hypertext (Content-Type header provided ability to transmit files other than plain HTML files — e.g. scripts, stylesheets, media)
-- Methods supported: GET , HEAD , POST
-- Connection nature: terminated immediately after the response
+- Provided header fields including rich metadata about both request and response (HTTP version number, status code, content type).
+- Response: not limited to hypertext (Content-Type header provided ability to transmit files other than plain HTML files — e.g. scripts, stylesheets, media).
+- Methods supported: GET, HEAD, POST
+- Connection nature: terminated immediately after the response (each request required a new TCP connection).
 
-HTTP 1.0 was replaced by **HTTP/1.1**, which introduced critical performance optimizations and feature enhancements — persistent and pipelined connections, chunked transfers, compression/decompression, content negotiations, virtual hosting (a server with a single IP Address hosting multiple domains), faster response and bandwidth savings by adding cache support. It also added new methods: PUT, DELETE, TRACE and OPTIONS. 
+HTTP 1.0 was replaced by **HTTP/1.1**, which introduced critical performance optimizations and feature enhancements — persistent and pipelined connections, chunked transfers, compression/decompression, content negotiations, virtual hosting (a server with a single IP Address hosting multiple domains), faster response and bandwidth savings by adding cache support. However, it still couldn’t fix the issue of ‘Head-of-Line’ (HOL) blocking, which happens when all parallel request slots in a browser are filled. HTTP/1.1 also added new methods: PUT, DELETE, TRACE and OPTIONS. 
 
 The **HTTP/2** protocol differs from HTTP/1.1 in a few ways:
 - It's a binary protocol rather than a text protocol. It can't be read and created manually. Despite this hurdle, it allows for the implementation of improved optimization techniques.
@@ -126,9 +135,9 @@ The **HTTP/2** protocol differs from HTTP/1.1 in a few ways:
 - It compresses headers. As these are often similar among a set of requests, this removes the duplication and overhead of data transmitted.
 - It allows a server to populate data in a client cache through a mechanism called the server push.
 
-HTTP/2 solved several problems that the creators of HTTP/1.1 did not anticipate. In particular, HTTP/2 is much faster and more efficient than HTTP/1.1. 
+HTTP/2 solved several problems that the creators of HTTP/1.1 did not anticipate. In particular, HTTP/2 is much faster and more efficient than HTTP/1.1. However, HOL blocking could still occur at the transport (TCP) layer.
 
-The next major version of HTTP, **HTTP/3** has the same semantics as earlier versions of HTTP but uses QUIC instead of TCP for the transport layer portion. QUIC is designed to provide much lower latency for HTTP connections. Like HTTP/2, it is a multiplexed protocol, but HTTP/2 runs over a single TCP connection, so packet loss detection and retransmission handled at the TCP layer can block all streams. QUIC runs multiple streams over UDP and implements packet loss detection and retransmission independently for each stream, so that if an error occurs, only the stream with data in that packet is blocked.
+The next major version of HTTP, **HTTP/3** has the same semantics as earlier versions of HTTP but uses QUIC instead of TCP for the transport layer portion. QUIC is designed to provide much lower latency for HTTP connections. Like HTTP/2, it is a multiplexed protocol, but HTTP/2 runs over a single TCP connection, so packet loss detection and retransmission handled at the TCP layer can block all streams. QUIC runs multiple streams over UDP and implements packet loss detection and retransmission independently for each stream, so that if an error occurs, only the stream with data in that packet is blocked. This effectively eliminates HOL blocking at the transport layer.
 
 
 

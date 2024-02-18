@@ -13,7 +13,7 @@ tags:
 ---
 Big data primarily refers to data sets that are too large or complex to be dealt with by traditional [data management systems](/wiki/databases). It includes diverse collections of structured, unstructured and semi-structured data that continues to grow exponentially over time. Though used sometimes loosely partly due to a lack of formal definition, the best interpretation is that it is a large body of information that cannot be comprehended when used in small amounts only.
 
-Big data analysis challenges include capturing data, data storage, data analysis, search, sharing, transfer, visualization, querying and updating. Big data was originally associated with three key concepts (also known as the three Vs):
+Big data analysis challenges include capturing data, data storage, data analysis, search, sharing, transfer, visualization, querying and updating. Big data was originally associated with three key concepts (also known as *the three Vs*):
 1.  **Volume** - Big data requires processing high volumes of low-density, unstructured data. The size of the data determines the value and potential insight, and whether it can be considered big data or not. For some organizations, this might be tens of terabytes of data. For others, it may be hundreds of petabytes.
 2. **Velocity** - Big data is generated, received and processed at a fast rate. It is often produced in (near) real time, and therefore, it must also be processed, accessed, and analyzed at the same rate to have any meaningful impact. 
 3. **Variety** - With the rise of big data, data comes in new unstructured data types that no longer fit neatly in relational databases. Big data is heterogeneous, meaning it can come from many different sources and can be structured, unstructured, or semi-structured. 
@@ -75,7 +75,7 @@ The inception of the data lakehouse came about as cloud warehouse providers bega
 
 File formats like Parquet have introduced more stringent schema to data lake tables, alongside a columnar format for improved query efficiency. To further bridge the gap, technologies like Delta Lake and Apache Hudi have brought greater reliability in write/read transactions to data lakes. This nudges them closer to the prized [ACID](/wiki/databases#acid) characteristics that are intrinsic to conventional database technologies.
 
-## Data Processing
+## Big Data Processing
 ### ETL
 **Extract, Transform, Load (ETL)** is a three-phase data integration process where data is extracted, transformed (cleaned, sanitized, scrubbed) and loaded into a target data store. ETL pipelines combine data from multiple sources into a large, central repository which is typically a data warehouse. ETL uses a set of business rules to clean and organize raw data and prepare it for storage, data analytics, and machine learning (ML). ETL software typically automates the entire process and can be run manually or on recurring schedules either as single jobs or aggregated into a batch of jobs.
 

@@ -8,7 +8,7 @@ permalink: /wiki/
 
 ## Compute Infrastructure
 - [Basic Computer Architecture](/wiki/hardware)
-- [Operating System](/wiki/os)
+- [Operating Systems](/wiki/os)
 - [Virtualization](/wiki/virtualization)
 
 ## Data Stores
