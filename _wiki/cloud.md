@@ -12,7 +12,7 @@ tags:
 ---
 Cloud computing is a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources (e.g., [networks](/wiki/network), [servers](/wiki/hardware), [data storage](/wiki/storage), development tools, applications and services) that can be rapidly provisioned and released with minimal management effort or service provider interaction. The resources are hosted at a remote data center managed by a *cloud service provider* (CSP) and are accessible as services over the [network](/wiki/network). It eliminates the need for companies to procure, configure, or manage resources themselves, and they only pay for what they use.
 
-The term ‘cloud computing’ also refers to the technology that makes the cloud work. This includes some form of [virtualized](/wiki/virtualization) IT infrastructure – [servers](/wiki/hardware), [operating systems](/wiki/os), [networking](/wiki/network), and other infrastructure that’s abstracted, using special software, so that it can be pooled and divided irrespective of physical [hardware](/wiki/hardware) boundaries. For example, a single hardware server can be divided into multiple [virtual machines](/wiki/virtualization#virtual-machines).
+The term ‘cloud computing’ also refers to the technology that makes the cloud work. This includes some form of [virtualized](/wiki/virtualization) IT infrastructure – [servers](/wiki/hardware), [operating systems](/wiki/os), [networking](/wiki/network), [storage](/wiki/storage) and other infrastructure that’s abstracted, using special software, so that it can be pooled and divided irrespective of physical [hardware](/wiki/hardware) boundaries. For example, a single hardware server can be divided into multiple [virtual machines](/wiki/virtualization#virtual-machines).
 
 The main characteristics of cloud computing are:
 - **Resource pooling** – Computing resources in a cloud infrastructure platform are dynamically divided and allocated on demand. Since a cloud host’s physical machines are dynamically provisioned and shared between multiple clients (“tenants”), cloud hardware is thoroughly optimized for maximum usage.
@@ -53,9 +53,9 @@ Public cloud is a type of cloud computing in which a CSP makes computing resourc
 The public cloud provider owns, manages, and assumes all responsibility for the data centers, hardware, and infrastructure on which its customers’ workloads run, and it typically provides high-bandwidth network connectivity to ensure high performance and rapid access to applications and data. 
 
 The three most popular public cloud services are:
-1. [Amazon Web Services](https://aws.amazon.com/) (AWS)
-2. [Microsoft Azure](https://azure.microsoft.com/en-us/)
-3. [Google Cloud](https://cloud.google.com/) (formerly known as GCP)
+1. [Amazon Web Services](https://aws.amazon.com/){:target="_blank"} (AWS)
+2. [Microsoft Azure](https://azure.microsoft.com/en-us/){:target="_blank"}
+3. [Google Cloud](https://cloud.google.com/){:target="_blank"} (formerly known as GCP)
 
 ### Private Cloud
 Private cloud is a cloud environment in which all cloud infrastructure and computing resources are dedicated to, and accessible by, one customer only. Private cloud combines many of the benefits of cloud computing, including elasticity, scalability, and ease of service delivery, with the access control, security, and resource customization of on-premises infrastructure.

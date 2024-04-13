@@ -20,7 +20,7 @@ In order to provide reliable message storage and guaranteed delivery, message br
 
 Message brokers may comprise queue managers to handle the interactions between multiple message queues, as well as services providing data routing, message translation, persistence, and client state management functionalities.
 
-The most common queue-based message brokers are [RabbitMQ](https://www.rabbitmq.com/) and [Apache ActiveMQ](https://activemq.apache.org/). There are also managed message queue services such as [Amazon Simple Queue Service (SQS)](https://aws.amazon.com/sqs/) and [Azure Service Bus](https://azure.microsoft.com/en-us/products/service-bus/). 
+The most common queue-based message brokers are [RabbitMQ](https://www.rabbitmq.com/){:target="_blank"} and [Apache ActiveMQ](https://activemq.apache.org/){:target="_blank"}. There are also managed message queue services such as [Amazon Simple Queue Service (SQS)](https://aws.amazon.com/sqs/){:target="_blank"} and [Azure Service Bus](https://azure.microsoft.com/en-us/products/service-bus/){:target="_blank"}. 
 
 
 ## Messaging Patterns
@@ -51,7 +51,7 @@ For each topic, the broker typically maintains a partitioned log of messages. Ea
 
 An *Event Streaming Platform (ESP)* is a highly scalable and durable system capable of continuously ingesting gigabytes of events per second from various sources. The data collected is available in milliseconds for intelligent applications that can react to events as they happen.
 
-The most common log-based message brokers or ESPs are [Apache Kafka](https://kafka.apache.org/), [Amazon Kinesis](https://aws.amazon.com/kinesis/), [Google Cloud Pub/Sub](https://cloud.google.com/pubsub) and [Azure Event Hubs](https://azure.microsoft.com/en-us/products/event-hubs)
+The most common log-based message brokers or ESPs are [Apache Kafka](https://kafka.apache.org/){:target="_blank"}, [Amazon Kinesis](https://aws.amazon.com/kinesis/){:target="_blank"}, [Google Cloud Pub/Sub](https://cloud.google.com/pubsub){:target="_blank"} and [Azure Event Hubs](https://azure.microsoft.com/en-us/products/event-hubs){:target="_blank"}.
 
 ![Messaging](/assets/images/messaging.png)
 
