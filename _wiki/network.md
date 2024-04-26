@@ -2,7 +2,7 @@
 layout: page
 title: Computer Networks
 permalink: /wiki/network/
-date: 2023-04-23
+date: 2024-04-26
 categories: 
   - network
 tags:
@@ -40,6 +40,8 @@ The TCP/IP model is a concise version of the OSI model. It contains four layers,
 3. **Transport / Host-to-Host layer** – analogous to the transport layer of the OSI model. It is responsible for end-to-end communication and error-free delivery of data. It shields the upper-layer applications from the complexities of data. The two main protocols present in this layer are: [Transmission Control Protocol (TCP)](#tcp) and [User Datagram Protocol (UDP)](#udp).
 4. **Application / Process layer** – performs the functions of the top three layers of the [OSI model](#osi-model): Application, Presentation and Session layer. It is responsible for node-to-node communication and controls user-interface specifications. Some of the protocols present in this layer are: HTTP, HTTPS, FTP, TFTP, Telnet, SSH, SMTP, SNMP, NTP, DNS, DHCP, NFS, X Window and LPD. 
 
+The Internet Protocol Suite is the underlying technology of the *Internet*  – a global system of interconnected governmental, academic, corporate, public, and private computer networks. The Internet utilizes copper communications and the optical networking backbone to enable the World Wide Web (WWW), the Internet of Things (IoT), video transfer, and a broad range of information services.
+
 ### Internet Protocol 
 The Internet Protocol (IP) is the network layer communications protocol in the Internet protocol suite for relaying datagrams across network boundaries. Its routing function enables internetworking, and essentially establishes the Internet. IP defines packet structures that encapsulate the data to be delivered. It also defines addressing methods that are used to label the datagram with source and destination information. IP information is attached to each packet, and this information helps routers to send packets to their destination, based on the IP addresses in the packet headers. Every device or domain that connects to the Internet is assigned an IP address and each IP packet contains both the IP address of the device or domain sending the packet and the IP address of the intended recipient.
 
@@ -74,17 +76,11 @@ The Transmission Control Protocol (TCP) is the most common transport protocol of
 Networks can be characterized by physical extent or geographic scale, such as:
 - **Personal Area Network (PAN)** – a computer network used for communication among computers and different information technological devices close to one person. The reach of a PAN typically extends to 10 meters. A wired PAN is usually constructed with USB and FireWire connections while technologies such as Bluetooth (BT) and infrared (IR) communication typically form a wireless PAN.
 - **Local Area Network (LAN)** – a network that connects computers and devices in a limited geographical area such as a home, school, office building, or closely positioned group of buildings. Wired LANs are most commonly based on Ethernet technology. Wireless LANs are based on the IEEE 802.11 standard, known as WiFi. A LAN can be connected to a wide area network (WAN) using a router. 
-- **Backbone Network** – part of a computer network infrastructure that provides a path for the exchange of information between different LANs or subnetworks. A backbone can tie together diverse networks within the same building, across different buildings, or over a wide area. The Internet backbone is a massive, global system of fiber-optic cable and optical networking that carry the bulk of data between WANs, metro, regional, national and transoceanic networks.
 - **Wide Area Network (WAN)** – a computer network that covers a large geographic area such as a city, country, or spans even intercontinental distances. A WAN uses a communications channel that combines many types of media such as telephone lines, cables, and airwaves. WAN technologies generally function at the lower three layers of the [OSI model](#osi-model): the physical layer, the data link layer, and the network layer.
+- **Backbone Network** – part of a computer network infrastructure that provides a path for the exchange of information between different LANs or subnetworks. A backbone can tie together diverse networks within the same building, across different buildings, or over a wide area. The Internet backbone is a massive, global system of fiber-optic cable and optical networking that carry the bulk of data between WANs, metro, regional, national and transoceanic networks.
 
 ### Organizational Scope
-Networks are typically managed by the organizations that own them. We usually distinguish between:
+Networks are typically managed by the organizations that own them. Organizational networks utilize the following technologies:
 - **Intranet** – a set of networks that are under the control of a single administrative entity. The intranet uses the IP protocol and IP-based tools such as web browsers and file transfer applications. The administrative entity limits the use of the intranet to its authorized users. Most commonly, an intranet is the internal LAN of an organization. 
-- **Internet** – a global system of interconnected governmental, academic, corporate, public, and private computer networks. It is based on the networking technologies of the Internet Protocol Suite. The Internet utilizes copper communications and the optical networking backbone to enable the World Wide Web (WWW), the Internet of Things (IoT), video transfer, and a broad range of information services.
 - **Virtual Private Network (VPN)** – an overlay network in which some of the links between nodes are carried by open connections or virtual circuits in some larger network (e.g., the Internet) instead of by physical wires. The data link layer protocols of the virtual network are said to be tunneled through the larger network when this is the case. VPN enables host-to-network communication, which is analogous to connecting a computer to a LAN. This type of VPN provides access to an enterprise network, such as an intranet. 
-
-
-
-
-
-
+- **Software-Defined Wide-Area Networking (SD-WAN)** – an automated, programmatic approach to managing enterprise network connectivity and circuit costs. It extends software-defined networking (SDN) into an application that businesses can use to quickly create a smart hybrid WAN. SD-WAN simplifies the management and operation of a WAN by decoupling the networking hardware from its control mechanism. It allows organizations to combine or replace private WAN connections with Internet broadband, LTE and/or 5G connections. 
