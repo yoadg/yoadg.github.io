@@ -12,20 +12,16 @@ permalink: /wiki/
 - [Virtualization](/wiki/virtualization)
 - [Container Orchestration](/wiki/orchestration)
 
-### Data Stores
+### Data Stores and Processing
 - [Data Storage](/wiki/storage)
 - [Databases](/wiki/databases)
-
-### Data Processing
 - [Data Serialization](/wiki/serialization)
 - [Big Data](/wiki/bigdata)
 
-### Networking
+### Networking and Communication
 - [Computer Networks](/wiki/network)
 - [Communication Protocols](/wiki/protocols)
 - [Traffic Management](/wiki/traffic)
-
-### Communication Methods
 - [Web Services](/wiki/web-services)
 - [Messaging](/wiki/messaging)
 
