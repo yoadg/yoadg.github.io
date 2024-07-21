@@ -24,7 +24,7 @@ Many network protocols are based on a client-server communication model with a r
 A peer-to-peer (P2P) network is designed around the notion of equal peer nodes simultaneously functioning as both "clients" and "servers" to the other nodes on the network. Peers are both suppliers and consumers of resources, in contrast to the traditional client–server model in which the consumption and supply of resources are divided. Peer-to-peer networks generally implement some form of virtual overlay network on top of the physical network topology, where the nodes in the overlay form a subset of the nodes in the physical network. Data is still exchanged directly over the underlying TCP/IP network, but at the application layer peers are able to communicate with each other directly, via the logical overlay links.
 
 # Application Layer Protocols
-Application layers protocols provide end-to-end communication between different computational applications. There are many different protocols used in different contexts, each with their own specific set of rules and capabilities. 
+Application layer protocols provide end-to-end communication between different computational applications. There are many different protocols used in different contexts, each with their own specific set of rules and capabilities. 
 
 ![Communication Protocols](/assets/images/protocols.png)
 
@@ -45,6 +45,7 @@ Some of the most common protocols are described in the following table:
 | POP | Post Office Protocol | Used by email clients to retrieve email messages from a mail server. | Email | 109/110 |
 | RTP | Real-time Transport Protocol | Delivery of audio and video over IP networks. | Telephony, video teleconference, TV services, web-based push-to-talk (PTT) | 5004 |
 | RTSP | Real Time Streaming Protocol | Designed for multiplexing and packetizing multimedia transport streams. | Entertainment and communications systems | 554 |
+| SMB | Server Message Block | Sharing files, printers, serial ports, and miscellaneous communications between nodes on a network. | Microsoft Windows services | 445 | 
 | SMTP | Simple Mail Transfer Protocol | Transfers email messages from senders' mail servers to the recipients' mail servers. | Email sending | 25 |
 | SNMP | Simple Network Management Protocol | Collection and organization of information about managed devices on IP networks and for modifying that information to change device behavior. | Network management | 161/162 |
 | SSH | Secure Shell Protocol | A cryptographic protocol for operating network services securely over an unsecured network. | Remote access | 22 |

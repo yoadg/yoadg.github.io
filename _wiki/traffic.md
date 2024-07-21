@@ -106,7 +106,7 @@ The key aspects of reverse proxies are:
 Direct Serving of Static Content – Manages the delivery of static files like HTML, CSS, JavaScript, images, and videos directly to the client.
 -  URL/Content Rewriting: Modifies the URL or content before forwarding requests to the backend servers. This is simplifying complex URLs and enhancing SEO.
 
-Examples of reverse proxy products are: Nginx, [Apache HTTP Server](https://httpd.apache.org/){:target="_blank"}, [Microsoft IIS](https://www.iis.net/){:target="_blank"} and [Azure Application Gateway](https://azure.microsoft.com/en-us/products/application-gateway){:target="_blank"}.
+Examples of reverse proxy products are: Nginx, [Envoy](https://www.envoyproxy.io/){:target="_blank"}, [Apache HTTP Server](https://httpd.apache.org/){:target="_blank"}, [Microsoft IIS](https://www.iis.net/){:target="_blank"} and [Azure Application Gateway](https://azure.microsoft.com/en-us/products/application-gateway){:target="_blank"}.
 
 ## API Gateway
 An API gateway acts as a middleware component that sits between clients and backend services. It can be seen as a superset of a Reverse Proxy, but its primary function is to facilitate communication, security, and management of APIs. The API GW provides a centralized and unified entry point for accessing various endpoints and functionalities, while abstracting the underlying architecture and decoupling the client interface from the backend. This ensures clients can communicate with applications consistently even as internal implementations change.

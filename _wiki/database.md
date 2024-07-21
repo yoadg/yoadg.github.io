@@ -112,21 +112,21 @@ Document databases, also known as document-oriented databases or document stores
 
 Though the data within documents is organized within a structure, document databases do not prescribe any specific format or schema. Each document can have a different internal structure that the database interprets. Groups of documents are called collections, but each document in a collection can have a different structure. Relationships are not stored within such collections and hence, joins are not available in the database. Alternatively, a set of documents can be embedded within a document to provide a level of denormalization.
 
-Examples of Document DBs: [MongoDB](https://www.mongodb.com/){:target="_blank"}, [Couchbase](https://www.couchbase.com/){:target="_blank"}, [CouchDB](https://couchdb.apache.org/){:target="_blank"}
+Examples of Document DBs: [MongoDB](https://www.mongodb.com/){:target="_blank"}, [Couchbase](https://www.couchbase.com/){:target="_blank"}, [CouchDB](https://couchdb.apache.org/){:target="_blank"}, [Google Cloud Firestore](https://cloud.google.com/firestore){:target="_blank"} and [Amazon DocumentDB](https://aws.amazon.com/documentdb/){:target="_blank"}.
 
 #### Graph Databases
 Graph databases are a type of NoSQL database that takes a different approach to establishing relationships between data. Rather than mapping relationships with tables and foreign keys, graph databases establish connections using the concepts of nodes, edges, and properties. Graph databases represent data as individual nodes which can have any number of properties associated with them. Between these nodes, edges (also called relationships) are established to represent different types of connections. In this way, the database encodes information about the data items within the nodes and information about their relationship in the edges that connect the nodes.
 
 Graph databases can be implemented as a native graph; which means they store data in the graph model described above, while non-native graphs store data in relational or other NoSQL databases and use graph processing engines for data access. Native Graphs implement index-free adjacency for data access.
 
-Examples of Graph DBs: [Neo4j](https://neo4j.com/){:target="_blank"}, [JanusGraph](https://janusgraph.org/){:target="_blank"}, [Amazon Neptune](https://aws.amazon.com/neptune/){:target="_blank"}.
+Examples of Graph DBs: [Neo4j](https://neo4j.com/){:target="_blank"}, [JanusGraph](https://janusgraph.org/){:target="_blank"}, [Amazon Neptune](https://aws.amazon.com/neptune/){:target="_blank"}, [ArangoDB](https://arangodb.com/){:target="_blank"}, [Dgraph](https://dgraph.io/){:target="_blank"} and [Memgraph](https://memgraph.com/){:target="_blank"}.
 
 #### Column-Family Databases
 Column-family databases, also called non-relational column stores, wide-column databases, or simply column databases, are perhaps the NoSQL type that, on the surface, looks most similar to relational databases. Like relational databases, wide-column databases store data using concepts like rows and columns. Technically, however, a wide-column store is closer to a two-dimensional key-value store. These databases often support the notion of column families that are stored separately. Each such column family typically contains multiple columns that are used together.
 
 Column-family databases are implemented as multidimensional nested sorted map of maps. The innermost map constitutes a version of the data identified by a timestamp and stored in a cell. A cell is mapped to a column which in turn is mapped to a column family. A set of column families are identified using a row key. Read and write is performed using the row key on sets of columns. These columns are stored as a continuous entry on the disk, enhancing performance and enabling users to access only the specific columns they need without allocating additional memory on irrelevant data.
 
-Examples of Column-family DBs: [Cassandra](https://cassandra.apache.org/){:target="_blank"}, [HBase](https://hbase.apache.org/){:target="_blank"}, [Cloud Bigtable](https://cloud.google.com/bigtable){:target="_blank"}.
+Examples of Column-family DBs: [Cassandra](https://cassandra.apache.org/){:target="_blank"}, [HBase](https://hbase.apache.org/){:target="_blank"}, [Google Cloud Bigtable](https://cloud.google.com/bigtable){:target="_blank"}, [ScyllaDB](https://www.scylladb.com/){:target="_blank"} and [DataStax](https://www.datastax.com/){:target="_blank"}.
 
 #### Time-Series Databases
 Time-series databases are data stores that focus on collecting and managing values that change over time. Although sometimes considered a subset of other database types, like key-value stores, time-series databases are prevalent and unique enough to warrant their own consideration. Many time-series databases are organized into structures that record the values for a single item over time (metrics). For example, a table or similar structure could be created to track CPU temperature. Inside, each value would consist of a timestamp and a temperature value to map what the temperature was at specific points in time.
@@ -135,12 +135,17 @@ In terms of read and write characteristics, time series databases are heavily wr
 
 Examples of Time-series DBs: [Prometheus](https://prometheus.io/){:target="_blank"}, [InfluxDB](https://www.influxdata.com/){:target="_blank"}, [Timescale](https://www.timescale.com/){:target="_blank"}, [Whisper](https://github.com/graphite-project/whisper){:target="_blank"}.
 
+#### Vector Databases
+A vector database is a specialized database storage designed to store, index, and query vector data. In the context of a Vector DB, the vector is a mathematical representation of the data. Vectors capture semantic meaning, so they can be used for relevancy or context based search, rather than simple text search. Vectors are based on word embeddings, which are a way to convert words and sentences into numbers that capture their contextual meaning. By utilizing word embeddings, vector databases can better understand the relationships between words and generate more accurate results. Vector databases make it easier for Large Language Models (LLMs) to remember previous inputs, allowing machine learning to be used to power search, recommendations, and text generation use-cases. 
+
+Examples of vector DBs: [Pinecone](https://www.pinecone.io/){:target="_blank"}, [Milvus](https://milvus.io/){:target="_blank"}, [Weaviate](https://weaviate.io/){:target="_blank"}, and [Chroma](https://www.trychroma.com/){:target="_blank"}.
+
+
 ### Multi-Model Databases
 Multi-model databases are databases that combine the functionality of more than one type of database. The benefits of this approach are clear — the same system can use different representations for different types of data.
 
 Collocating the data from multiple database types in the same system allows for novel operations that would be difficult or impossible otherwise. For instance, multi-model databases may allow users to access and manipulate data stored in different database types within a single query. Multi-model databases also help maintain data consistency, which can be a problem when performing operations that modify data in many systems at once.
 
-Many of the most popular relational databases actually support multi-model, including Oracle, MySQL, PostgreSQL and SQL Server. Many cloud databases are also multi-model, such as [Azure Cosmos DB](https://azure.microsoft.com/en-us/products/cosmos-db/){:target="_blank"} and [Azure SQL DB](https://azure.microsoft.com/en-us/products/azure-sql/database/){:target="_blank"}.
-
+Many of the most popular relational databases actually support multi-model, including Oracle, MySQL, PostgreSQL and SQL Server. Other multi-model DBs include [Azure Cosmos DB](https://azure.microsoft.com/en-us/products/cosmos-db/){:target="_blank"}, [FaunaDB](https://fauna.com/){:target="_blank"} and [SurrealDB](https://surrealdb.com/){:target="_blank"}. 
 
 

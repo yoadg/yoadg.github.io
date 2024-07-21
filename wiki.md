@@ -5,6 +5,7 @@ permalink: /wiki/
 ---
 ## The Cloud Wiki
 - [Cloud Computing](/wiki/cloud)
+- [The Cloud Stack](/wiki/cloud-stack)
 
 ### Compute Infrastructure
 - [Basic Computer Architecture](/wiki/hardware)
