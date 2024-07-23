@@ -10,7 +10,13 @@ tags:
   - compute
   - data
 ---
-An end-to-end cloud application may utilize a large variety of cloud services and technologies. Cloud applications can be built with different architectures, but in general they can be divided into the following tiers:  
+An end-to-end cloud application may utilize a large variety of cloud services and technologies. Cloud applications can be built with different architectures, but in general they can be divided into the following tiers:
+- Client side - applications that run on various devices and connect to the cloud. 
+- Networking - access to cloud and communication with and between services.   
+- Compute - the infrastructure and platforms that enable the execution of cloud services. 
+- Data storage - the ability to store, manage, organize, query and retrieve persistent data. 
+
+The following diagram describes these tiers: 
 
 ![Cloud Stack](/assets/images/cloud-stack.png)
 
