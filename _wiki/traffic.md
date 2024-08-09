@@ -36,7 +36,7 @@ ADC has evolved into 3 distinct products:
 
 -  A **load balancer** acts as a traffic distributor, evenly distributing incoming requests across multiple backend servers or instances to optimize resource utilization, improve availability, and enhance performance. It helps achieve scalability, fault tolerance, and improved performance by using various algorithms to determine which server should handle each request, considering factors like server health, available resources, and session persistence.
 -  A **reverse proxy**, also known as an application-level gateway, sits between clients and servers and handles requests on behalf of the servers. It acts as an intermediary for client requests, forwarding them to the appropriate server and returning the server's response to the client. Reverse proxies provide benefits such as caching, SSL termination, and improved security by shielding servers from direct exposure to the internet.
-- An **API gateway** acts as a middleware component that sits between clients and backend services. Its primary function is to facilitate communication, security, and management of APIs. It acts as a single point of entry, abstracting the underlying architecture and providing a unified interface for clients. API gateways offer various functionalities like request routing, protocol translation, authentication, and rate limiting. They enable organizations to manage and secure their APIs effectively.
+- An **API gateway** acts as an API front-end. Its primary function is to facilitate communication, security and management of APIs. It provides a single point of entry, abstracting the underlying architecture and providing a unified interface for clients. API gateways offer various functionalities like request routing, protocol translation, authentication, and rate limiting. They enable organizations to manage and secure their APIs effectively.
 
 ![Application Traffic Management](/assets/images/traffic.png)
 
@@ -81,7 +81,7 @@ However, CPU and memory are now sufficiently fast and cheap enough that the perf
 Load balances use various algorithms to achieve the best possible distribution of traffic. The choice of a load-balancing algorithm depends on the specific needs and objectives of the application or service being balanced. Different algorithms offer various advantages and trade-offs, making them more or less suitable for particular scenarios.
 
 **Static Algorithms:**
-- Round robin — Client requests are sequentially sent to different service instances in a cyclic order. Typically, statelessness is required for the services. 
+- Round robin — Client requests are sequentially sent to different service instances in a cyclic order, ensuring a fair distribution of the workload. Typically, statelessness is required for the services. 
 - Sticky round-robin — An enhanced version of the round-robin algorithm where subsequent requests from a client go to the same service instance that handled the initial request.
 - Weighted round-robin — The administrator can assign weights to each service, determining the proportion of requests each service handles.
 - Hashing — This algorithm applies a hash function to the IP or URL of incoming requests. The instances to which requests are routed depend on the hash function’s result. Requests with the same hash will always go to the same service instance, assuming the number of instances is constant.
